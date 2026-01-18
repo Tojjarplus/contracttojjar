@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منشئ عقود التموين الذكي</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
+        /* أنماط عامة */
         :root {
             --primary: #1a237e;
             --secondary: #0066cc;
@@ -189,7 +189,7 @@
             box-shadow: 0 6px 20px rgba(40, 167, 69, 0.25);
         }
 
-        /* Preview Section Styles */
+        /* معاينة العقد */
         .preview-container {
             background: #fff;
             border: 1px solid var(--border);
@@ -203,126 +203,112 @@
             text-align: justify;
         }
 
-        /* PDF Print Styles - VERY IMPORTANT */
-        .pdf-print {
-            font-family: 'Arial', 'Times New Roman', sans-serif !important;
-            font-size: 13px !important;
-            line-height: 1.5 !important;
-            color: #000 !important;
-            background: white !important;
-            padding: 20px !important;
-            direction: rtl !important;
-            text-align: right !important;
+        /* تنسيقات PDF */
+        .contract-content {
+            font-family: 'Arial', 'Times New Roman', sans-serif;
+            font-size: 13px;
+            line-height: 1.5;
+            color: #000;
+            background: white;
+            padding: 20px;
+            direction: rtl;
+            text-align: right;
         }
 
-        .pdf-print .contract-ref {
+        .contract-content .contract-ref {
             text-align: center;
-            font-family: 'Arial', monospace !important;
-            font-size: 14px !important;
-            color: #000 !important;
-            margin-bottom: 10px !important;
-            font-weight: bold !important;
+            font-family: 'Arial', monospace;
+            font-size: 14px;
+            color: #000;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
 
-        .pdf-print h1 {
-            text-align: center !important;
-            font-size: 20px !important;
-            font-weight: 700 !important;
-            color: #000 !important;
-            padding-bottom: 10px !important;
-            border-bottom: 2px solid #000 !important;
-            margin: 0 0 15px 0 !important;
+        .contract-content h1 {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: #000;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #000;
+            margin: 0 0 15px 0;
         }
 
-        .pdf-print .p {
-            margin: 8px 0 !important;
-            text-align: justify !important;
-            line-height: 1.5 !important;
+        .contract-content .p {
+            margin: 8px 0;
+            text-align: justify;
+            line-height: 1.5;
         }
 
-        .pdf-print .section-title {
-            font-weight: 700 !important;
-            margin-top: 15px !important;
-            margin-bottom: 8px !important;
-            font-size: 15px !important;
-            color: #000 !important;
-            padding-right: 8px !important;
-            border-right: 2px solid #000 !important;
-            background: transparent !important;
-            padding: 6px 10px !important;
-            break-inside: avoid !important;
-            page-break-inside: avoid !important;
+        .contract-content .section-title {
+            font-weight: 700;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: #000;
+            padding-right: 8px;
+            border-right: 2px solid #000;
+            background: transparent;
+            padding: 6px 10px;
         }
 
-        .pdf-print .dotted-line {
+        .contract-content .dotted-line {
             display: inline-block;
-            min-width: 150px !important;
-            border-bottom: 1px dotted #000 !important;
-            margin: 0 4px !important;
-            vertical-align: bottom !important;
-            height: 1em !important;
+            min-width: 150px;
+            border-bottom: 1px dotted #000;
+            margin: 0 4px;
+            vertical-align: bottom;
+            height: 1em;
         }
 
-        .pdf-print .parentheses {
-            color: #333 !important;
-            font-weight: 600 !important;
-            margin: 0 1px !important;
+        .contract-content .parentheses {
+            color: #333;
+            font-weight: 600;
+            margin: 0 1px;
         }
 
-        .pdf-print table {
-            width: 100% !important;
-            border-collapse: collapse !important;
-            margin: 12px 0 16px 0 !important;
-            page-break-inside: avoid !important;
-            break-inside: avoid !important;
+        .contract-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 16px 0;
         }
 
-        .pdf-print th, .pdf-print td {
-            border: 1px solid #000 !important;
-            padding: 8px 10px !important;
-            text-align: right !important;
-            font-size: 12px !important;
-            page-break-inside: avoid !important;
+        .contract-content th, .contract-content td {
+            border: 1px solid #000;
+            padding: 8px 10px;
+            text-align: right;
+            font-size: 12px;
         }
 
-        .pdf-print th {
-            text-align: center !important;
-            font-weight: 700 !important;
-            background: #f0f0f0 !important;
-            color: #000 !important;
+        .contract-content th {
+            text-align: center;
+            font-weight: 700;
+            background: #f0f0f0;
+            color: #000;
         }
 
-        .pdf-print .signature-box {
-            display: inline-block !important;
-            width: 48% !important;
-            vertical-align: top !important;
-            padding: 12px !important;
-            background: #f8f8f8 !important;
-            border: 1px solid #ddd !important;
-            border-radius: 4px !important;
-            margin: 8px !important;
-            min-height: 150px !important;
-            page-break-inside: avoid !important;
+        .contract-content .signature-box {
+            display: inline-block;
+            width: 48%;
+            vertical-align: top;
+            padding: 12px;
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 8px;
+            min-height: 150px;
         }
 
-        .pdf-print .signature-title {
-            font-weight: 700 !important;
-            font-size: 14px !important;
-            color: #000 !important;
-            margin-bottom: 8px !important;
-            padding-bottom: 4px !important;
-            border-bottom: 1px solid #000 !important;
+        .contract-content .signature-title {
+            font-weight: 700;
+            font-size: 14px;
+            color: #000;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #000;
         }
 
-        /* إخفاء العناصر غير الضرورية للطباعة */
-        .pdf-print .no-print,
-        .pdf-print .btn-group,
-        .pdf-print header,
-        .pdf-print footer {
-            display: none !important;
-        }
-
-        /* Loading State */
+        /* حالة التحميل */
         .loading {
             display: none;
             text-align: center;
@@ -344,7 +330,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Footer */
+        /* تذييل */
         footer {
             text-align: center;
             padding: 25px;
@@ -356,7 +342,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* Alert */
+        /* تنبيهات */
         .alert {
             padding: 15px;
             border-radius: 8px;
@@ -376,7 +362,7 @@
             border: 1px solid #f5c6cb;
         }
 
-        /* Radio buttons for contract duration */
+        /* أزرار المدة */
         .duration-options {
             display: flex;
             gap: 20px;
@@ -412,6 +398,29 @@
             font-size: 16px;
             font-weight: 600;
         }
+
+        /* الطباعة */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            
+            #pdfContent, #pdfContent * {
+                visibility: visible;
+            }
+            
+            #pdfContent {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                font-size: 12pt !important;
+            }
+            
+            .no-print {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -422,7 +431,7 @@
         </header>
 
         <div class="main-content">
-            <!-- Form Section -->
+            <!-- قسم النموذج -->
             <div class="form-section">
                 <h2 class="section-title">📋 بيانات العقد</h2>
                 
@@ -503,11 +512,14 @@
                 </div>
 
                 <div class="btn-group">
-                    <button type="button" class="btn-primary" onclick="updatePreview()">
+                    <button type="button" class="btn-primary" id="previewBtn">
                         <span>👁️ معاينة العقد</span>
                     </button>
-                    <button type="button" class="btn-download" onclick="downloadPDF()">
+                    <button type="button" class="btn-download" id="downloadBtn">
                         <span>📥 تنزيل PDF</span>
+                    </button>
+                    <button type="button" class="btn-secondary" id="printBtn">
+                        <span>🖨️ طباعة مباشرة</span>
                     </button>
                 </div>
 
@@ -517,11 +529,11 @@
                 </div>
             </div>
 
-            <!-- Preview Section -->
+            <!-- قسم المعاينة -->
             <div class="preview-section">
                 <h2 class="section-title">👁️ معاينة العقد</h2>
                 <div class="preview-container" id="contractPreview">
-                    <!-- Contract content will be inserted here by JavaScript -->
+                    <!-- محتوى العقد سيظهر هنا -->
                     <div style="text-align: center; padding: 50px; color: #666;">
                         <p>⬅️ أدخل البيانات في النموذج ثم اضغط على "معاينة العقد"</p>
                         <p>لرؤية معاينة العقد هنا</p>
@@ -536,17 +548,38 @@
         </footer>
     </div>
 
+    <!-- محتوى مخفي للـ PDF -->
+    <div id="pdfContent" style="display: none;"></div>
+
+    <!-- المكتبات -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
     <script>
-        // Set today's date as default
+        // jsPDF متاح كـ window.jspdf.jsPDF
+        const { jsPDF } = window.jspdf;
+
         document.addEventListener('DOMContentLoaded', function() {
+            // تعيين تاريخ اليوم كقيمة افتراضية
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('contractDate').value = today;
             document.getElementById('commercialDate').value = today;
             
-            // Set up duration radio buttons
+            // إعداد أزرار المدة
             setupDurationButtons();
             
-            // Initial preview with sample data
+            // إضافة مستمعي الأحداث
+            document.getElementById('previewBtn').addEventListener('click', updatePreview);
+            document.getElementById('downloadBtn').addEventListener('click', generatePDF);
+            document.getElementById('printBtn').addEventListener('click', printContract);
+            
+            // تحديث تلقائي عند تغيير الحقول
+            const inputs = document.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                input.addEventListener('input', updatePreview);
+            });
+            
+            // تحديث أولي
             updatePreview();
         });
 
@@ -568,7 +601,7 @@
                 updatePreview();
             });
             
-            // Set initial selection
+            // تعيين التحديد الأولي
             duration6.classList.add('selected');
         }
 
@@ -583,8 +616,32 @@
             }, 5000);
         }
 
-        function updatePreview() {
-            // Get all form values
+        function formatDate(dateString) {
+            if (!dateString || dateString === '________________') return dateString;
+            try {
+                const date = new Date(dateString);
+                const day = date.getDate().toString().padStart(2, '0');
+                const month = (date.getMonth() + 1).toString().padStart(2, '0');
+                const year = date.getFullYear();
+                return `${day} / ${month} / ${year}`;
+            } catch {
+                return dateString;
+            }
+        }
+
+        function getArabicDay(dateString) {
+            if (!dateString) return '__________';
+            try {
+                const date = new Date(dateString);
+                const days = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+                return days[date.getDay()];
+            } catch {
+                return '__________';
+            }
+        }
+
+        function generateContractHTML(isForPDF = false) {
+            // الحصول على قيم الحقول
             const contractDate = document.getElementById('contractDate').value;
             const companyName = document.getElementById('companyName').value || '________________';
             const commercialNo = document.getElementById('commercialNo').value || '________________';
@@ -598,50 +655,22 @@
             const restaurantName = document.getElementById('restaurantName').value || '________________';
             const contractDuration = document.querySelector('input[name="contractDuration"]:checked').value;
 
-            // Format dates
-            const formatDate = (dateString) => {
-                if (!dateString || dateString === '________________') return dateString;
-                const date = new Date(dateString);
-                const day = date.getDate().toString().padStart(2, '0');
-                const month = (date.getMonth() + 1).toString().padStart(2, '0');
-                const year = date.getFullYear();
-                return `${day} / ${month} / ${year}`;
-            };
-
-            // Format hijri date (simplified)
-            const formatHijriDate = (dateString) => {
-                if (!dateString || dateString === '________________') return dateString;
-                const date = new Date(dateString);
-                // Simple approximation for demo - in real app use proper hijri conversion
-                const hijriYear = date.getFullYear() - 622;
-                return `${hijriYear}`;
-            };
-
-            // Get Arabic day name
-            const getArabicDay = (dateString) => {
-                if (!dateString) return '__________';
-                const date = new Date(dateString);
-                const days = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
-                return days[date.getDay()];
-            };
-
-            const dayName = getArabicDay(contractDate);
+            // تنسيق التواريخ
             const formattedContractDate = formatDate(contractDate);
             const formattedCommercialDate = formatDate(commercialDate);
-            const hijriYear = formatHijriDate(contractDate);
-
-            // Get duration text
+            const dayName = getArabicDay(contractDate);
             const durationText = contractDuration === '6' ? '6 أشهر' : 'سنة واحدة';
 
-            // Generate contract HTML
-            const contractHTML = `
-                <div class="pdf-print">
+            const containerClass = isForPDF ? 'contract-content' : 'pdf-print';
+            
+            return `
+                <div class="${containerClass}">
                     <div class="contract-ref">CONTRACT REF: 0$$01</div>
                     <h1>عقد تقديم خدمات الربط التقني</h1>
 
                     <div class="p">أنه في يوم <span class="dotted-line">${dayName}</span> بتاريخ <span class="dotted-line">${formattedContractDate}</span> حرر هذا العقد بين كل من:</div>
 
-                    <table class="tbl-parties">
+                    <table>
                         <thead>
                             <tr>
                                 <th>الطرف</th>
@@ -680,7 +709,7 @@
                         <div class="p" style="position: relative; padding-right: 28px;">2- <strong>رسوم التوصيل:</strong> ستة عشر ريالاً <span class="parentheses">(</span>16 ريال<span class="parentheses">)</span> للطلبات الواقعة ضمن نطاق المسافة من 5 كيلومترات إلى 7 كيلومترات.</div>
                     </div>
 
-                    <!-- Signatures -->
+                    <!-- التواقيع -->
                     <div style="margin-top: 35px; padding-top: 25px; border-top: 2px dashed #ccc;">
                         <div class="signature-box">
                             <div class="signature-title">الطرف الأول</div>
@@ -705,106 +734,130 @@
                     <div class="p" style="text-align:center;color:#666;font-size:14px;">________________________________________</div>
                 </div>
             `;
-
-            // Update preview
-            document.getElementById('contractPreview').innerHTML = contractHTML;
-            showAlert('تم تحديث معاينة العقد بنجاح', 'success');
         }
 
-        function downloadPDF() {
-            // Validate required fields
+        function updatePreview() {
+            const contractHTML = generateContractHTML(false);
+            document.getElementById('contractPreview').innerHTML = contractHTML;
+            showAlert('تم تحديث معاينة العقد', 'success');
+        }
+
+        function validateForm() {
             const requiredFields = [
-                'companyName', 'commercialNo', 'issuedFrom', 
-                'companyAddress', 'companyPhone', 'companyEmail',
-                'representativeName', 'representativeTitle', 'restaurantName'
+                {id: 'companyName', label: 'اسم الشركة'},
+                {id: 'commercialNo', label: 'رقم السجل التجاري'},
+                {id: 'issuedFrom', label: 'صادر من'},
+                {id: 'companyAddress', label: 'عنوان الشركة'},
+                {id: 'companyPhone', label: 'هاتف الشركة'},
+                {id: 'companyEmail', label: 'البريد الإلكتروني'},
+                {id: 'representativeName', label: 'اسم الممثل'},
+                {id: 'representativeTitle', label: 'صفة الممثل'},
+                {id: 'restaurantName', label: 'اسم المطعم'}
             ];
 
             const missingFields = [];
-            requiredFields.forEach(fieldId => {
-                const field = document.getElementById(fieldId);
-                if (!field.value.trim()) {
-                    missingFields.push(field.previousElementSibling.textContent);
+            requiredFields.forEach(field => {
+                const input = document.getElementById(field.id);
+                if (!input.value.trim()) {
+                    missingFields.push(field.label);
                 }
             });
 
             if (missingFields.length > 0) {
                 showAlert(`يرجى ملء الحقول التالية: ${missingFields.join('، ')}`, 'error');
-                return;
+                return false;
             }
+            return true;
+        }
 
-            // Show loading
-            document.getElementById('loading').style.display = 'block';
-
-            // Get the contract element
-            const element = document.getElementById('contractPreview');
+        function generatePDF() {
+            if (!validateForm()) return;
             
-            // PDF options - FIXED SETTINGS
-            const opt = {
-                margin: [10, 10, 10, 10],
-                filename: `عقد_التموين_الذكي_${document.getElementById('companyName').value}.pdf`,
-                image: { 
-                    type: 'jpeg', 
-                    quality: 0.98 
-                },
-                html2canvas: { 
+            const loading = document.getElementById('loading');
+            loading.style.display = 'block';
+            
+            // إنشاء محتوى PDF
+            const pdfContent = document.getElementById('pdfContent');
+            pdfContent.innerHTML = generateContractHTML(true);
+            pdfContent.style.display = 'block';
+            
+            // استخدام html2canvas لالتقاط المحتوز
+            setTimeout(() => {
+                html2canvas(pdfContent, {
                     scale: 2,
                     useCORS: true,
                     logging: false,
-                    letterRendering: true,
-                    allowTaint: true,
                     backgroundColor: '#ffffff'
-                },
-                jsPDF: { 
-                    unit: 'mm', 
-                    format: 'a4', 
-                    orientation: 'portrait',
-                    compress: true,
-                    hotfixes: ["px_scaling"]
-                },
-                pagebreak: { 
-                    mode: ['avoid-all', 'css', 'legacy'] 
-                }
-            };
-
-            // Generate PDF with better error handling
-            setTimeout(() => {
-                html2pdf().set(opt).from(element).save()
-                    .then(() => {
-                        document.getElementById('loading').style.display = 'none';
-                        showAlert('تم تنزيل ملف PDF بنجاح!', 'success');
-                        
-                        // Reset form after successful download
-                        document.getElementById('companyName').value = '';
-                        document.getElementById('commercialNo').value = '';
-                        document.getElementById('issuedFrom').value = '';
-                        document.getElementById('companyAddress').value = '';
-                        document.getElementById('companyPhone').value = '';
-                        document.getElementById('companyEmail').value = '';
-                        document.getElementById('representativeName').value = '';
-                        document.getElementById('representativeTitle').value = '';
-                        document.getElementById('restaurantName').value = '';
-                        
-                        // Update preview
-                        updatePreview();
-                    })
-                    .catch(error => {
-                        document.getElementById('loading').style.display = 'none';
-                        console.error('PDF Generation Error:', error);
-                        showAlert('حدث خطأ أثناء إنشاء PDF. حاول مرة أخرى.', 'error');
-                    });
+                }).then(canvas => {
+                    const imgData = canvas.toDataURL('image/png');
+                    const pdf = new jsPDF('p', 'mm', 'a4');
+                    
+                    const imgWidth = 210; // A4 width in mm
+                    const pageHeight = 297; // A4 height in mm
+                    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                    
+                    let heightLeft = imgHeight;
+                    let position = 0;
+                    
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                    
+                    // إضافة صفحات إضافية إذا كان المحتوى طويلاً
+                    while (heightLeft >= 0) {
+                        position = heightLeft - imgHeight;
+                        pdf.addPage();
+                        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                        heightLeft -= pageHeight;
+                    }
+                    
+                    const companyName = document.getElementById('companyName').value;
+                    pdf.save(`عقد_التموين_الذكي_${companyName}.pdf`);
+                    
+                    loading.style.display = 'none';
+                    pdfContent.style.display = 'none';
+                    showAlert('تم تنزيل ملف PDF بنجاح!', 'success');
+                    
+                    // إعادة تعيين النموذج
+                    resetForm();
+                }).catch(error => {
+                    console.error('Error generating PDF:', error);
+                    loading.style.display = 'none';
+                    pdfContent.style.display = 'none';
+                    showAlert('حدث خطأ أثناء إنشاء PDF. حاول مرة أخرى.', 'error');
+                });
             }, 500);
         }
 
-        // Auto-update preview on input changes
-        const inputs = document.querySelectorAll('input, select');
-        inputs.forEach(input => {
-            input.addEventListener('input', updatePreview);
-        });
+        function printContract() {
+            if (!validateForm()) return;
+            
+            const printContent = document.getElementById('pdfContent');
+            printContent.innerHTML = generateContractHTML(true);
+            printContent.style.display = 'block';
+            
+            const originalContent = document.body.innerHTML;
+            document.body.innerHTML = printContent.innerHTML;
+            
+            window.print();
+            
+            document.body.innerHTML = originalContent;
+            printContent.style.display = 'none';
+            location.reload(); // إعادة تحميل الصفحة لاستعادة الوظائف
+        }
 
-        // Add event listeners for radio buttons
-        document.querySelectorAll('input[name="contractDuration"]').forEach(radio => {
-            radio.addEventListener('change', updatePreview);
-        });
+        function resetForm() {
+            document.getElementById('companyName').value = '';
+            document.getElementById('commercialNo').value = '';
+            document.getElementById('issuedFrom').value = '';
+            document.getElementById('companyAddress').value = '';
+            document.getElementById('companyPhone').value = '';
+            document.getElementById('companyEmail').value = '';
+            document.getElementById('representativeName').value = '';
+            document.getElementById('representativeTitle').value = '';
+            document.getElementById('restaurantName').value = '';
+            
+            updatePreview();
+        }
     </script>
 </body>
 </html>
