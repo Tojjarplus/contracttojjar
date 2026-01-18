@@ -197,103 +197,129 @@
             padding: 20px;
             max-height: 800px;
             overflow-y: auto;
-            font-family: 'Simplified Arabic', 'Arial', sans-serif;
-            font-size: 15.5px;
-            line-height: 1.8;
+            font-family: 'Arial', 'Segoe UI', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
             text-align: justify;
         }
 
-        .contract-ref {
+        /* PDF Print Styles - VERY IMPORTANT */
+        .pdf-print {
+            font-family: 'Arial', 'Times New Roman', sans-serif !important;
+            font-size: 13px !important;
+            line-height: 1.5 !important;
+            color: #000 !important;
+            background: white !important;
+            padding: 20px !important;
+            direction: rtl !important;
+            text-align: right !important;
+        }
+
+        .pdf-print .contract-ref {
             text-align: center;
-            font-family: monospace;
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-            font-weight: bold;
+            font-family: 'Arial', monospace !important;
+            font-size: 14px !important;
+            color: #000 !important;
+            margin-bottom: 10px !important;
+            font-weight: bold !important;
         }
 
-        .preview-container h1 {
-            text-align: center;
-            font-size: 22px;
-            font-weight: 700;
-            color: #1a237e;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--secondary);
-            margin: 0 0 20px 0;
+        .pdf-print h1 {
+            text-align: center !important;
+            font-size: 20px !important;
+            font-weight: 700 !important;
+            color: #000 !important;
+            padding-bottom: 10px !important;
+            border-bottom: 2px solid #000 !important;
+            margin: 0 0 15px 0 !important;
         }
 
-        .preview-container .p {
-            margin: 12px 0;
-            text-align: justify;
-            line-height: 1.85;
+        .pdf-print .p {
+            margin: 8px 0 !important;
+            text-align: justify !important;
+            line-height: 1.5 !important;
         }
 
-        .preview-container .section-title {
-            font-weight: 700;
-            margin-top: 22px;
-            margin-bottom: 10px;
-            font-size: 16.5px;
-            color: #1a237e;
-            padding-right: 8px;
-            border-right: 3px solid var(--secondary);
-            background: linear-gradient(to left, rgba(0, 102, 204, 0.05), transparent);
-            padding: 8px 12px;
-            border-radius: 3px;
+        .pdf-print .section-title {
+            font-weight: 700 !important;
+            margin-top: 15px !important;
+            margin-bottom: 8px !important;
+            font-size: 15px !important;
+            color: #000 !important;
+            padding-right: 8px !important;
+            border-right: 2px solid #000 !important;
+            background: transparent !important;
+            padding: 6px 10px !important;
+            break-inside: avoid !important;
+            page-break-inside: avoid !important;
         }
 
-        .dotted-line {
+        .pdf-print .dotted-line {
             display: inline-block;
-            min-width: 220px;
-            border-bottom: 1.5px dotted #666;
-            margin: 0 6px;
-            vertical-align: bottom;
-            height: 1.2em;
+            min-width: 150px !important;
+            border-bottom: 1px dotted #000 !important;
+            margin: 0 4px !important;
+            vertical-align: bottom !important;
+            height: 1em !important;
         }
 
-        .parentheses {
-            color: #555;
-            font-weight: 600;
-            margin: 0 2px;
+        .pdf-print .parentheses {
+            color: #333 !important;
+            font-weight: 600 !important;
+            margin: 0 1px !important;
         }
 
-        .preview-container table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 16px 0 22px 0;
+        .pdf-print table {
+            width: 100% !important;
+            border-collapse: collapse !important;
+            margin: 12px 0 16px 0 !important;
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
         }
 
-        .preview-container th, .preview-container td {
-            border: 1px solid var(--dark);
-            padding: 12px 14px;
-            text-align: right;
+        .pdf-print th, .pdf-print td {
+            border: 1px solid #000 !important;
+            padding: 8px 10px !important;
+            text-align: right !important;
+            font-size: 12px !important;
+            page-break-inside: avoid !important;
         }
 
-        .preview-container th {
-            text-align: center;
-            font-weight: 700;
-            background: linear-gradient(to bottom, #f0f4ff, #e6ebff);
-            color: #1a237e;
+        .pdf-print th {
+            text-align: center !important;
+            font-weight: 700 !important;
+            background: #f0f0f0 !important;
+            color: #000 !important;
         }
 
-        .signature-box {
-            display: inline-block;
-            width: 45%;
-            vertical-align: top;
-            padding: 15px;
-            background: var(--light);
-            border-radius: 6px;
-            margin: 10px;
-            min-height: 180px;
+        .pdf-print .signature-box {
+            display: inline-block !important;
+            width: 48% !important;
+            vertical-align: top !important;
+            padding: 12px !important;
+            background: #f8f8f8 !important;
+            border: 1px solid #ddd !important;
+            border-radius: 4px !important;
+            margin: 8px !important;
+            min-height: 150px !important;
+            page-break-inside: avoid !important;
         }
 
-        .signature-title {
-            font-weight: 700;
-            font-size: 16px;
-            color: #1a237e;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid #ddd;
+        .pdf-print .signature-title {
+            font-weight: 700 !important;
+            font-size: 14px !important;
+            color: #000 !important;
+            margin-bottom: 8px !important;
+            padding-bottom: 4px !important;
+            border-bottom: 1px solid #000 !important;
+        }
+
+        /* إخفاء العناصر غير الضرورية للطباعة */
+        .pdf-print .no-print,
+        .pdf-print .btn-group,
+        .pdf-print header,
+        .pdf-print footer {
+            display: none !important;
         }
 
         /* Loading State */
@@ -330,20 +356,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        /* Responsive */
-        @media print {
-            .form-section, .btn-group, header, footer {
-                display: none !important;
-            }
-            
-            .preview-section {
-                width: 100% !important;
-                box-shadow: none !important;
-                border: none !important;
-                padding: 0 !important;
-            }
-        }
-
         /* Alert */
         .alert {
             padding: 15px;
@@ -362,6 +374,43 @@
             background: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
+        }
+
+        /* Radio buttons for contract duration */
+        .duration-options {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .duration-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 12px 20px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.3s;
+            flex: 1;
+        }
+
+        .duration-option:hover {
+            border-color: var(--secondary);
+        }
+
+        .duration-option.selected {
+            border-color: var(--secondary);
+            background: #f0f8ff;
+        }
+
+        .duration-option input[type="radio"] {
+            margin: 0;
+        }
+
+        .duration-text {
+            font-size: 16px;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -440,13 +489,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="contractDuration">مدة العقد (أشهر):</label>
-                    <select id="contractDuration">
-                        <option value="12">12 شهر (سنة واحدة)</option>
-                        <option value="24">24 شهر (سنتان)</option>
-                        <option value="36">36 شهر (3 سنوات)</option>
-                        <option value="60">60 شهر (5 سنوات)</option>
-                    </select>
+                    <label>مدة العقد:</label>
+                    <div class="duration-options">
+                        <label class="duration-option" id="duration6">
+                            <input type="radio" name="contractDuration" value="6" checked>
+                            <span class="duration-text">6 أشهر</span>
+                        </label>
+                        <label class="duration-option" id="duration12">
+                            <input type="radio" name="contractDuration" value="12">
+                            <span class="duration-text">سنة واحدة</span>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="btn-group">
@@ -490,9 +543,34 @@
             document.getElementById('contractDate').value = today;
             document.getElementById('commercialDate').value = today;
             
+            // Set up duration radio buttons
+            setupDurationButtons();
+            
             // Initial preview with sample data
             updatePreview();
         });
+
+        function setupDurationButtons() {
+            const duration6 = document.getElementById('duration6');
+            const duration12 = document.getElementById('duration12');
+            
+            duration6.addEventListener('click', function() {
+                document.querySelector('input[name="contractDuration"][value="6"]').checked = true;
+                duration6.classList.add('selected');
+                duration12.classList.remove('selected');
+                updatePreview();
+            });
+            
+            duration12.addEventListener('click', function() {
+                document.querySelector('input[name="contractDuration"][value="12"]').checked = true;
+                duration12.classList.add('selected');
+                duration6.classList.remove('selected');
+                updatePreview();
+            });
+            
+            // Set initial selection
+            duration6.classList.add('selected');
+        }
 
         function showAlert(message, type = 'success') {
             const alert = document.getElementById('alert');
@@ -518,14 +596,14 @@
             const representativeName = document.getElementById('representativeName').value || '________________';
             const representativeTitle = document.getElementById('representativeTitle').value || '________________';
             const restaurantName = document.getElementById('restaurantName').value || '________________';
-            const contractDuration = document.getElementById('contractDuration').value;
+            const contractDuration = document.querySelector('input[name="contractDuration"]:checked').value;
 
             // Format dates
             const formatDate = (dateString) => {
                 if (!dateString || dateString === '________________') return dateString;
                 const date = new Date(dateString);
-                const day = date.getDate();
-                const month = date.getMonth() + 1;
+                const day = date.getDate().toString().padStart(2, '0');
+                const month = (date.getMonth() + 1).toString().padStart(2, '0');
                 const year = date.getFullYear();
                 return `${day} / ${month} / ${year}`;
             };
@@ -552,76 +630,80 @@
             const formattedCommercialDate = formatDate(commercialDate);
             const hijriYear = formatHijriDate(contractDate);
 
+            // Get duration text
+            const durationText = contractDuration === '6' ? '6 أشهر' : 'سنة واحدة';
+
             // Generate contract HTML
             const contractHTML = `
-                <div class="contract-ref">CONTRACT REF: 0$$01</div>
-                <h1>عقد تقديم خدمات الربط التقني</h1>
+                <div class="pdf-print">
+                    <div class="contract-ref">CONTRACT REF: 0$$01</div>
+                    <h1>عقد تقديم خدمات الربط التقني</h1>
 
-                <div class="p">أنه في يوم <span class="dotted-line">${dayName}</span> بتاريخ <span class="dotted-line">${formattedContractDate}</span> حرر هذا العقد بين كل من:</div>
+                    <div class="p">أنه في يوم <span class="dotted-line">${dayName}</span> بتاريخ <span class="dotted-line">${formattedContractDate}</span> حرر هذا العقد بين كل من:</div>
 
-                <table class="tbl-parties">
-                    <thead>
-                        <tr>
-                            <th>الطرف</th>
-                            <th>البيانات</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="text-align:center;font-weight:700;background:#f0f8ff;">أولاً</td>
-                            <td>
-                                أولاً <span class="parentheses">-</span> مؤسسة التموين الذكي لتقنية المعلومات، السجل التجاري رقم <span class="parentheses">(</span>1010804712<span class="parentheses">)</span> وتاريخه 06 / 07 / 1443 هـ صادر من <span class="parentheses">(</span><span class="parentheses">)</span>، وعنوانها 3765 محمد العثماني، حي المغرزات، الرياض 12482 هاتف: 920007560، البريد الإلكتروني: info@tojjarplus، ويمثلها في التوقيع على هذا العقد السيد / رياض بن بليهد بن محمد العتيبي، بصفته <span class="parentheses">(</span>المدير العام<span class="parentheses">)</span> ويشار إليه فيما بعد بـ <span class="parentheses">(</span>الطرف الأول<span class="parentheses">)</span>.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="text-align:center;font-weight:700;background:#f0f8ff;">ثانياً</td>
-                            <td>
-                                ثانياً <span class="parentheses">-</span> شركة، ${companyName} / السجل التجاري رقم ${commercialNo} وتاريخه ${formattedCommercialDate} صادر من ${issuedFrom}، وعنوانها ${companyAddress} هاتف: ${companyPhone}، البريد الإلكتروني: ${companyEmail}، ويمثلها في التوقيع على هذا العقد السيد / ${representativeName}، بصفته ${representativeTitle} ويشار إليه فيما بعد بـ <span class="parentheses">(</span>الطرف الثاني<span class="parentheses">)</span>.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <table class="tbl-parties">
+                        <thead>
+                            <tr>
+                                <th>الطرف</th>
+                                <th>البيانات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center;font-weight:700;background:#f0f0f0;">أولاً</td>
+                                <td>
+                                    أولاً <span class="parentheses">-</span> مؤسسة التموين الذكي لتقنية المعلومات، السجل التجاري رقم <span class="parentheses">(</span>1010804712<span class="parentheses">)</span> وتاريخه 06 / 07 / 1443 هـ صادر من <span class="parentheses">(</span><span class="parentheses">)</span>، وعنوانها 3765 محمد العثماني، حي المغرزات، الرياض 12482 هاتف: 920007560، البريد الإلكتروني: info@tojjarplus، ويمثلها في التوقيع على هذا العقد السيد / رياض بن بليهد بن محمد العتيبي، بصفته <span class="parentheses">(</span>المدير العام<span class="parentheses">)</span> ويشار إليه فيما بعد بـ <span class="parentheses">(</span>الطرف الأول<span class="parentheses">)</span>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;font-weight:700;background:#f0f0f0;">ثانياً</td>
+                                <td>
+                                    ثانياً <span class="parentheses">-</span> شركة، ${companyName} / السجل التجاري رقم ${commercialNo} وتاريخه ${formattedCommercialDate} صادر من ${issuedFrom}، وعنوانها ${companyAddress} هاتف: ${companyPhone}، البريد الإلكتروني: ${companyEmail}، ويمثلها في التوقيع على هذا العقد السيد / ${representativeName}، بصفته ${representativeTitle} ويشار إليه فيما بعد بـ <span class="parentheses">(</span>الطرف الثاني<span class="parentheses">)</span>.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                <div class="section-title">التمهيد:</div>
-                <div class="p">حيث إن الطرف الأول شركة تملك الخبرات في تقديم الحلول التقنية المتقدمة، وتعمل كواجهة لتمكين المطاعم من استقبال الطلبات عبر تطبيق الواتساب، وذلك من خلال ربط وتوثيق حسابات الأعمال من الشركة الأم المالكة للتطبيق <span class="parentheses">(</span>شركة ميتا<span class="parentheses">)</span>، لتمكين الطرف الثاني من الاستفادة من الخدمات والمزايا التقنية جراء هذا التوثيق، وحيث أن الطرف الثاني يعمل في مجال المطاعم ويملك المطعم <span class="parentheses">(</span>${restaurantName}<span class="parentheses">)</span> ويرغب في تطوير منظومة استقبال طلباته وتحويلها من النظام التقليدي إلى نظام آلي عبر تطبيق الواتساب، والاستفادة من الخدمات التقنية والوساطة التي يوفرها الطرف الأول لتسهيل وصول عملائه لمنتجاته وتحصيل قيمتها إلكترونياً، ولرغبة الطرف الثاني بالتعاقد مع الطرف الأول، فقد اتفق الطرفان عن قناعة، ورضا، وإدراك مستوعب لما حرر من غير إكراه على النحو الآتي:</div>
+                    <div class="section-title">التمهيد:</div>
+                    <div class="p">حيث إن الطرف الأول شركة تملك الخبرات في تقديم الحلول التقنية المتقدمة، وتعمل كواجهة لتمكين المطاعم من استقبال الطلبات عبر تطبيق الواتساب، وذلك من خلال ربط وتوثيق حسابات الأعمال من الشركة الأم المالكة للتطبيق <span class="parentheses">(</span>شركة ميتا<span class="parentheses">)</span>، لتمكين الطرف الثاني من الاستفادة من الخدمات والمزايا التقنية جراء هذا التوثيق، وحيث أن الطرف الثاني يعمل في مجال المطاعم ويملك المطعم <span class="parentheses">(</span>${restaurantName}<span class="parentheses">)</span> ويرغب في تطوير منظومة استقبال طلباته وتحويلها من النظام التقليدي إلى نظام آلي عبر تطبيق الواتساب، والاستفادة من الخدمات التقنية والوساطة التي يوفرها الطرف الأول لتسهيل وصول عملائه لمنتجاته وتحصيل قيمتها إلكترونياً، ولرغبة الطرف الثاني بالتعاقد مع الطرف الأول، فقد اتفق الطرفان عن قناعة، ورضا، وإدراك مستوعب لما حرر من غير إكراه على النحو الآتي:</div>
 
-                <!-- Contract clauses (abbreviated for demo) -->
-                <div class="section-title">البند الأول:</div>
-                <div class="p">يعتبر التمهيد أعلاه جزء لا يتجزأ من هذا العقد يقرأ، ويفسر معه.</div>
+                    <div class="section-title">البند الأول:</div>
+                    <div class="p">يعتبر التمهيد أعلاه جزء لا يتجزأ من هذا العقد يقرأ، ويفسر معه.</div>
 
-                <div class="section-title">البند الخامس <span class="parentheses">(</span>مدة العقد<span class="parentheses">)</span></div>
-                <div class="p">مدة هذا العقد <span class="parentheses">(</span>${contractDuration} شهراً<span class="parentheses">)</span>، وتبدأ هذه المدة بعد <span class="parentheses">(</span>توقيع هذا العقد / توثيق الحساب<span class="parentheses">)</span>، وتنتهي بانتهاء مدته.</div>
+                    <div class="section-title">البند الخامس <span class="parentheses">(</span>مدة العقد<span class="parentheses">)</span></div>
+                    <div class="p">مدة هذا العقد <span class="parentheses">(</span>${durationText}<span class="parentheses">)</span>، وتبدأ هذه المدة بعد <span class="parentheses">(</span>توقيع هذا العقد / توثيق الحساب<span class="parentheses">)</span>، وتنتهي بانتهاء مدته.</div>
 
-                <div class="section-title">البند السادس <span class="parentheses">(</span>المقابل المالي وآلية الدفع<span class="parentheses">)</span></div>
-                <div class="p">اتفق الطرفان على الرسوم والآليات التالية:</div>
-                <div style="margin-right: 10px;">
-                    <div class="p" style="position: relative; padding-right: 28px;">1- <strong>رسوم المنصة:</strong> ريال ونصف <span class="parentheses">(</span>1.5 ريال<span class="parentheses">)</span> من إجمالي كل طلب مكتمل يتم عبر الواتساب (6 أشهر مجانا).</div>
-                    <div class="p" style="position: relative; padding-right: 28px;">2- <strong>رسوم التوصيل:</strong> ستة عشر ريالاً <span class="parentheses">(</span>16 ريال<span class="parentheses">)</span> للطلبات الواقعة ضمن نطاق المسافة من 5 كيلومترات إلى 7 كيلومترات.</div>
-                </div>
-
-                <!-- Signatures -->
-                <div style="margin-top: 35px; padding-top: 25px; border-top: 2px dashed #ccc;">
-                    <div class="signature-box">
-                        <div class="signature-title">الطرف الأول</div>
-                        <div class="p">مؤسسة التموين الذكي لتقنية المعلومات</div>
-                        <div class="p">ويمثلها بصفته <span class="parentheses">(</span>المدير العام<span class="parentheses">)</span> / رياض بن بليهد بن محمد العتيبي</div>
-                        <div class="p">التوقيع: <span class="dotted-line"></span></div>
-                        <div class="p">التاريخ: <span class="dotted-line"></span></div>
+                    <div class="section-title">البند السادس <span class="parentheses">(</span>المقابل المالي وآلية الدفع<span class="parentheses">)</span></div>
+                    <div class="p">اتفق الطرفان على الرسوم والآليات التالية:</div>
+                    <div style="margin-right: 10px;">
+                        <div class="p" style="position: relative; padding-right: 28px;">1- <strong>رسوم المنصة:</strong> ريال ونصف <span class="parentheses">(</span>1.5 ريال<span class="parentheses">)</span> من إجمالي كل طلب مكتمل يتم عبر الواتساب (6 أشهر مجانا).</div>
+                        <div class="p" style="position: relative; padding-right: 28px;">2- <strong>رسوم التوصيل:</strong> ستة عشر ريالاً <span class="parentheses">(</span>16 ريال<span class="parentheses">)</span> للطلبات الواقعة ضمن نطاق المسافة من 5 كيلومترات إلى 7 كيلومترات.</div>
                     </div>
 
-                    <div class="signature-box">
-                        <div class="signature-title">الطرف الثاني</div>
-                        <div class="p">شركة ${companyName}</div>
-                        <div class="p">ويمثلها بصفته <span class="parentheses">(</span>${representativeTitle}<span class="parentheses">)</span> / ${representativeName}</div>
-                        <div class="p">التوقيع: <span class="dotted-line"></span></div>
-                        <div class="p">التاريخ: <span class="dotted-line"></span></div>
-                    </div>
-                </div>
+                    <!-- Signatures -->
+                    <div style="margin-top: 35px; padding-top: 25px; border-top: 2px dashed #ccc;">
+                        <div class="signature-box">
+                            <div class="signature-title">الطرف الأول</div>
+                            <div class="p">مؤسسة التموين الذكي لتقنية المعلومات</div>
+                            <div class="p">ويمثلها بصفته <span class="parentheses">(</span>المدير العام<span class="parentheses">)</span> / رياض بن بليهد بن محمد العتيبي</div>
+                            <div class="p">التوقيع: <span class="dotted-line"></span></div>
+                            <div class="p">التاريخ: <span class="dotted-line"></span></div>
+                        </div>
 
-                <div style="margin: 25px 0; border-top: 1px solid #ddd; position: relative;">
-                    <div style="position: absolute; top: -10px; right: 50%; transform: translateX(50%); background: white; padding: 0 15px; color: #666; font-size: 18px;">✧</div>
+                        <div class="signature-box">
+                            <div class="signature-title">الطرف الثاني</div>
+                            <div class="p">شركة ${companyName}</div>
+                            <div class="p">ويمثلها بصفته <span class="parentheses">(</span>${representativeTitle}<span class="parentheses">)</span> / ${representativeName}</div>
+                            <div class="p">التوقيع: <span class="dotted-line"></span></div>
+                            <div class="p">التاريخ: <span class="dotted-line"></span></div>
+                        </div>
+                    </div>
+
+                    <div style="margin: 25px 0; border-top: 1px solid #ddd; position: relative;">
+                        <div style="position: absolute; top: -10px; right: 50%; transform: translateX(50%); background: white; padding: 0 15px; color: #666; font-size: 18px;">✧</div>
+                    </div>
+                    <div class="p" style="text-align:center;color:#666;font-size:14px;">________________________________________</div>
                 </div>
-                <div class="p" style="text-align:center;color:#666;font-size:14px;">________________________________________</div>
             `;
 
             // Update preview
@@ -656,52 +738,72 @@
             // Get the contract element
             const element = document.getElementById('contractPreview');
             
-            // PDF options
+            // PDF options - FIXED SETTINGS
             const opt = {
-                margin: [15, 15, 15, 15],
+                margin: [10, 10, 10, 10],
                 filename: `عقد_التموين_الذكي_${document.getElementById('companyName').value}.pdf`,
-                image: { type: 'jpeg', quality: 0.98 },
+                image: { 
+                    type: 'jpeg', 
+                    quality: 0.98 
+                },
                 html2canvas: { 
                     scale: 2,
                     useCORS: true,
-                    logging: false
+                    logging: false,
+                    letterRendering: true,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff'
                 },
                 jsPDF: { 
                     unit: 'mm', 
                     format: 'a4', 
                     orientation: 'portrait',
-                    compress: true
+                    compress: true,
+                    hotfixes: ["px_scaling"]
+                },
+                pagebreak: { 
+                    mode: ['avoid-all', 'css', 'legacy'] 
                 }
             };
 
-            // Generate PDF
-            html2pdf().set(opt).from(element).save().then(() => {
-                document.getElementById('loading').style.display = 'none';
-                showAlert('تم تنزيل ملف PDF بنجاح!', 'success');
-                
-                // Reset form after successful download
-                document.getElementById('companyName').value = '';
-                document.getElementById('commercialNo').value = '';
-                document.getElementById('issuedFrom').value = '';
-                document.getElementById('companyAddress').value = '';
-                document.getElementById('companyPhone').value = '';
-                document.getElementById('companyEmail').value = '';
-                document.getElementById('representativeName').value = '';
-                document.getElementById('representativeTitle').value = '';
-                document.getElementById('restaurantName').value = '';
-                
-                // Update preview
-                updatePreview();
-            }).catch(error => {
-                document.getElementById('loading').style.display = 'none';
-                showAlert('حدث خطأ أثناء إنشاء PDF: ' + error.message, 'error');
-            });
+            // Generate PDF with better error handling
+            setTimeout(() => {
+                html2pdf().set(opt).from(element).save()
+                    .then(() => {
+                        document.getElementById('loading').style.display = 'none';
+                        showAlert('تم تنزيل ملف PDF بنجاح!', 'success');
+                        
+                        // Reset form after successful download
+                        document.getElementById('companyName').value = '';
+                        document.getElementById('commercialNo').value = '';
+                        document.getElementById('issuedFrom').value = '';
+                        document.getElementById('companyAddress').value = '';
+                        document.getElementById('companyPhone').value = '';
+                        document.getElementById('companyEmail').value = '';
+                        document.getElementById('representativeName').value = '';
+                        document.getElementById('representativeTitle').value = '';
+                        document.getElementById('restaurantName').value = '';
+                        
+                        // Update preview
+                        updatePreview();
+                    })
+                    .catch(error => {
+                        document.getElementById('loading').style.display = 'none';
+                        console.error('PDF Generation Error:', error);
+                        showAlert('حدث خطأ أثناء إنشاء PDF. حاول مرة أخرى.', 'error');
+                    });
+            }, 500);
         }
 
         // Auto-update preview on input changes
         const inputs = document.querySelectorAll('input, select');
         inputs.forEach(input => {
             input.addEventListener('input', updatePreview);
+        });
+
+        // Add event listeners for radio buttons
+        document.querySelectorAll('input[name="contractDuration"]').forEach(radio => {
+            radio.addEventListener('change', updatePreview);
         });
     </script>
 </body>
