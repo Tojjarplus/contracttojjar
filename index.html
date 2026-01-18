@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منشئ عقود التموين الذكي</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary: #1a237e;
+            --secondary: #0066cc;
+            --light: #f8f9fa;
+            --dark: #333;
+            --border: #ddd;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        header {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            border-bottom: 5px solid var(--primary);
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-section, .preview-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            height: fit-content;
+        }
+
+        .section-title {
+            color: var(--primary);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--secondary);
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 26px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #444;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: #fdfdfd;
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus,
+        input[type="date"]:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px solid #eee;
+        }
+
+        button {
+            padding: 16px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #151e6b, #0055aa);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 35, 126, 0.25);
+        }
+
+        .btn-secondary {
+            background: #f0f4ff;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: #e6ebff;
+            transform: translateY(-2px);
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+        }
+
+        .btn-download:hover {
+            background: linear-gradient(135deg, #218838, #1ba87e);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.25);
+        }
+
+        /* Preview Section Styles */
+        .preview-container {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            padding: 20px;
+            max-height: 800px;
+            overflow-y: auto;
+            font-family: 'Simplified Arabic', 'Arial', sans-serif;
+            font-size: 15.5px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .contract-ref {
+            text-align: center;
+            font-family: monospace;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .preview-container h1 {
+            text-align: center;
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a237e;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--secondary);
+            margin: 0 0 20px 0;
+        }
+
+        .preview-container .p {
+            margin: 12px 0;
+            text-align: justify;
+            line-height: 1.85;
+        }
+
+        .preview-container .section-title {
+            font-weight: 700;
+            margin-top: 22px;
+            margin-bottom: 10px;
+            font-size: 16.5px;
+            color: #1a237e;
+            padding-right: 8px;
+            border-right: 3px solid var(--secondary);
+            background: linear-gradient(to left, rgba(0, 102, 204, 0.05), transparent);
+            padding: 8px 12px;
+            border-radius: 3px;
+        }
+
+        .dotted-line {
+            display: inline-block;
+            min-width: 220px;
+            border-bottom: 1.5px dotted #666;
+            margin: 0 6px;
+            vertical-align: bottom;
+            height: 1.2em;
+        }
+
+        .parentheses {
+            color: #555;
+            font-weight: 600;
+            margin: 0 2px;
+        }
+
+        .preview-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 22px 0;
+        }
+
+        .preview-container th, .preview-container td {
+            border: 1px solid var(--dark);
+            padding: 12px 14px;
+            text-align: right;
+        }
+
+        .preview-container th {
+            text-align: center;
+            font-weight: 700;
+            background: linear-gradient(to bottom, #f0f4ff, #e6ebff);
+            color: #1a237e;
+        }
+
+        .signature-box {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            padding: 15px;
+            background: var(--light);
+            border-radius: 6px;
+            margin: 10px;
+            min-height: 180px;
+        }
+
+        .signature-title {
+            font-weight: 700;
+            font-size: 16px;
+            color: #1a237e;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Loading State */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--secondary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #666;
+            font-size: 14px;
+            background: white;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive */
+        @media print {
+            .form-section, .btn-group, header, footer {
+                display: none !important;
+            }
+            
+            .preview-section {
+                width: 100% !important;
+                box-shadow: none !important;
+                border: none !important;
+                padding: 0 !important;
+            }
+        }
+
+        /* Alert */
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 منشئ عقود التموين الذكي</h1>
+            <p class="subtitle">أدخل بيانات العقد وسيتم إنشاء العقد وتنزيله كملف PDF تلقائياً</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Form Section -->
+            <div class="form-section">
+                <h2 class="section-title">📋 بيانات العقد</h2>
+                
+                <div id="alert" class="alert"></div>
+
+                <div class="form-group">
+                    <label for="contractDate">تاريخ العقد:</label>
+                    <input type="date" id="contractDate" value="">
+                </div>
+
+                <h3 class="section-title" style="font-size: 20px; margin-top: 30px;">🏢 بيانات الطرف الثاني (العميل)</h3>
+
+                <div class="form-group">
+                    <label for="companyName">اسم الشركة:</label>
+                    <input type="text" id="companyName" placeholder="أدخل اسم الشركة">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="commercialNo">رقم السجل التجاري:</label>
+                        <input type="text" id="commercialNo" placeholder="رقم السجل التجاري">
+                    </div>
+                    <div class="form-group">
+                        <label for="commercialDate">تاريخ السجل:</label>
+                        <input type="date" id="commercialDate">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="issuedFrom">صادر من:</label>
+                    <input type="text" id="issuedFrom" placeholder="جهة إصدار السجل">
+                </div>
+
+                <div class="form-group">
+                    <label for="companyAddress">عنوان الشركة:</label>
+                    <input type="text" id="companyAddress" placeholder="العنوان الكامل">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="companyPhone">هاتف الشركة:</label>
+                        <input type="tel" id="companyPhone" placeholder="رقم الهاتف">
+                    </div>
+                    <div class="form-group">
+                        <label for="companyEmail">البريد الإلكتروني:</label>
+                        <input type="email" id="companyEmail" placeholder="البريد الإلكتروني">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="representativeName">اسم الممثل:</label>
+                        <input type="text" id="representativeName" placeholder="اسم الممثل القانوني">
+                    </div>
+                    <div class="form-group">
+                        <label for="representativeTitle">صفة الممثل:</label>
+                        <input type="text" id="representativeTitle" placeholder="المدير / المالك / ...">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="restaurantName">اسم المطعم:</label>
+                    <input type="text" id="restaurantName" placeholder="اسم المطعم">
+                </div>
+
+                <div class="form-group">
+                    <label for="contractDuration">مدة العقد (أشهر):</label>
+                    <select id="contractDuration">
+                        <option value="12">12 شهر (سنة واحدة)</option>
+                        <option value="24">24 شهر (سنتان)</option>
+                        <option value="36">36 شهر (3 سنوات)</option>
+                        <option value="60">60 شهر (5 سنوات)</option>
+                    </select>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" class="btn-primary" onclick="updatePreview()">
+                        <span>👁️ معاينة العقد</span>
+                    </button>
+                    <button type="button" class="btn-download" onclick="downloadPDF()">
+                        <span>📥 تنزيل PDF</span>
+                    </button>
+                </div>
+
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                    <p>جاري إنشاء ملف PDF...</p>
+                </div>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="preview-section">
+                <h2 class="section-title">👁️ معاينة العقد</h2>
+                <div class="preview-container" id="contractPreview">
+                    <!-- Contract content will be inserted here by JavaScript -->
+                    <div style="text-align: center; padding: 50px; color: #666;">
+                        <p>⬅️ أدخل البيانات في النموذج ثم اضغط على "معاينة العقد"</p>
+                        <p>لرؤية معاينة العقد هنا</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 مؤسسة التموين الذكي لتقنية المعلومات - جميع الحقوق محفوظة</p>
+            <p>السجل التجاري: 1010804712 | هاتف: 920007560 | البريد الإلكتروني: info@tojjarplus</p>
+        </footer>
+    </div>
+
+    <script>
+        // Set today's date as default
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('contractDate').value = today;
+            document.getElementById('commercialDate').value = today;
+            
+            // Initial preview with sample data
+            updatePreview();
+        });
+
+        function showAlert(message, type = 'success') {
+            const alert = document.getElementById('alert');
+            alert.textContent = message;
+            alert.className = `alert alert-${type}`;
+            alert.style.display = 'block';
+            
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 5000);
+        }
+
+        function updatePreview() {
+            // Get all form values
+            const contractDate = document.getElementById('contractDate').value;
+            const companyName = document.getElementById('companyName').value || '________________';
+            const commercialNo = document.getElementById('commercialNo').value || '________________';
+            const commercialDate = document.getElementById('commercialDate').value || '________________';
+            const issuedFrom = document.getElementById('issuedFrom').value || '________________';
+            const companyAddress = document.getElementById('companyAddress').value || '________________';
+            const companyPhone = document.getElementById('companyPhone').value || '________________';
+            const companyEmail = document.getElementById('companyEmail').value || '________________';
+            const representativeName = document.getElementById('representativeName').value || '________________';
+            const representativeTitle = document.getElementById('representativeTitle').value || '________________';
+            const restaurantName = document.getElementById('restaurantName').value || '________________';
+            const contractDuration = document.getElementById('contractDuration').value;
+
+            // Format dates
+            const formatDate = (dateString) => {
+                if (!dateString || dateString === '________________') return dateString;
+                const date = new Date(dateString);
+                const day = date.getDate();
+                const month = date.getMonth() + 1;
+                const year = date.getFullYear();
+                return `${day} / ${month} / ${year}`;
+            };
+
+            // Format hijri date (simplified)
+            const formatHijriDate = (dateString) => {
+                if (!dateString || dateString === '________________') return dateString;
+                const date = new Date(dateString);
+                // Simple approximation for demo - in real app use proper hijri conversion
+                const hijriYear = date.getFullYear() - 622;
+                return `${hijriYear}`;
+            };
+
+            // Get Arabic day name
+            const getArabicDay = (dateString) => {
+                if (!dateString) return '__________';
+                const date = new Date(dateString);
+                const days = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+                return days[date.getDay()];
+            };
+
+            const dayName = getArabicDay(contractDate);
+            const formattedContractDate = formatDate(contractDate);
+            const formattedCommercialDate = formatDate(commercialDate);
+            const hijriYear = formatHijriDate(contractDate);
+
+            // Generate contract HTML
+            const contractHTML = `
+                <div class="contract-ref">CONTRACT REF: 0$$01</div>
+                <h1>عقد تقديم خدمات الربط التقني</h1>
+
+                <div class="p">أنه في يوم <span class="dotted-line">${dayName}</span> بتاريخ <span class="dotted-line">${formattedContractDate}</span> حرر هذا العقد بين كل من:</div>
+
+                <table class="tbl-parties">
+                    <thead>
+                        <tr>
+                            <th>الطرف</th>
+                            <th>البيانات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align:center;font-weight:700;background:#f0f8ff;">أولاً</td>
+                            <td>
+                                أولاً <span class="parentheses">-</span> مؤسسة التموين الذكي لتقنية المعلومات، السجل التجاري رقم <span class="parentheses">(</span>1010804712<span class="parentheses">)</span> وتاريخه 06 / 07 / 1443 هـ صادر من <span class="parentheses">(</span><span class="parentheses">)</span>، وعنوانها 3765 محمد العثماني، حي المغرزات، الرياض 12482 هاتف: 920007560، البريد الإلكتروني: info@tojjarplus، ويمثلها في التوقيع على هذا العقد السيد / رياض بن بليهد بن محمد العتيبي، بصفته <span class="parentheses">(</span>المدير العام<span class="parentheses">)</span> ويشار إليه فيما بعد بـ <span class="parentheses">(</span>الطرف الأول<span class="parentheses">)</span>.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:center;font-weight:700;background:#f0f8ff;">ثانياً</td>
+                            <td>
+                                ثانياً <span class="parentheses">-</span> شركة، ${companyName} / السجل التجاري رقم ${commercialNo} وتاريخه ${formattedCommercialDate} صادر من ${issuedFrom}، وعنوانها ${companyAddress} هاتف: ${companyPhone}، البريد الإلكتروني: ${companyEmail}، ويمثلها في التوقيع على هذا العقد السيد / ${representativeName}، بصفته ${representativeTitle} ويشار إليه فيما بعد بـ <span class="parentheses">(</span>الطرف الثاني<span class="parentheses">)</span>.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="section-title">التمهيد:</div>
+                <div class="p">حيث إن الطرف الأول شركة تملك الخبرات في تقديم الحلول التقنية المتقدمة، وتعمل كواجهة لتمكين المطاعم من استقبال الطلبات عبر تطبيق الواتساب، وذلك من خلال ربط وتوثيق حسابات الأعمال من الشركة الأم المالكة للتطبيق <span class="parentheses">(</span>شركة ميتا<span class="parentheses">)</span>، لتمكين الطرف الثاني من الاستفادة من الخدمات والمزايا التقنية جراء هذا التوثيق، وحيث أن الطرف الثاني يعمل في مجال المطاعم ويملك المطعم <span class="parentheses">(</span>${restaurantName}<span class="parentheses">)</span> ويرغب في تطوير منظومة استقبال طلباته وتحويلها من النظام التقليدي إلى نظام آلي عبر تطبيق الواتساب، والاستفادة من الخدمات التقنية والوساطة التي يوفرها الطرف الأول لتسهيل وصول عملائه لمنتجاته وتحصيل قيمتها إلكترونياً، ولرغبة الطرف الثاني بالتعاقد مع الطرف الأول، فقد اتفق الطرفان عن قناعة، ورضا، وإدراك مستوعب لما حرر من غير إكراه على النحو الآتي:</div>
+
+                <!-- Contract clauses (abbreviated for demo) -->
+                <div class="section-title">البند الأول:</div>
+                <div class="p">يعتبر التمهيد أعلاه جزء لا يتجزأ من هذا العقد يقرأ، ويفسر معه.</div>
+
+                <div class="section-title">البند الخامس <span class="parentheses">(</span>مدة العقد<span class="parentheses">)</span></div>
+                <div class="p">مدة هذا العقد <span class="parentheses">(</span>${contractDuration} شهراً<span class="parentheses">)</span>، وتبدأ هذه المدة بعد <span class="parentheses">(</span>توقيع هذا العقد / توثيق الحساب<span class="parentheses">)</span>، وتنتهي بانتهاء مدته.</div>
+
+                <div class="section-title">البند السادس <span class="parentheses">(</span>المقابل المالي وآلية الدفع<span class="parentheses">)</span></div>
+                <div class="p">اتفق الطرفان على الرسوم والآليات التالية:</div>
+                <div style="margin-right: 10px;">
+                    <div class="p" style="position: relative; padding-right: 28px;">1- <strong>رسوم المنصة:</strong> ريال ونصف <span class="parentheses">(</span>1.5 ريال<span class="parentheses">)</span> من إجمالي كل طلب مكتمل يتم عبر الواتساب (6 أشهر مجانا).</div>
+                    <div class="p" style="position: relative; padding-right: 28px;">2- <strong>رسوم التوصيل:</strong> ستة عشر ريالاً <span class="parentheses">(</span>16 ريال<span class="parentheses">)</span> للطلبات الواقعة ضمن نطاق المسافة من 5 كيلومترات إلى 7 كيلومترات.</div>
+                </div>
+
+                <!-- Signatures -->
+                <div style="margin-top: 35px; padding-top: 25px; border-top: 2px dashed #ccc;">
+                    <div class="signature-box">
+                        <div class="signature-title">الطرف الأول</div>
+                        <div class="p">مؤسسة التموين الذكي لتقنية المعلومات</div>
+                        <div class="p">ويمثلها بصفته <span class="parentheses">(</span>المدير العام<span class="parentheses">)</span> / رياض بن بليهد بن محمد العتيبي</div>
+                        <div class="p">التوقيع: <span class="dotted-line"></span></div>
+                        <div class="p">التاريخ: <span class="dotted-line"></span></div>
+                    </div>
+
+                    <div class="signature-box">
+                        <div class="signature-title">الطرف الثاني</div>
+                        <div class="p">شركة ${companyName}</div>
+                        <div class="p">ويمثلها بصفته <span class="parentheses">(</span>${representativeTitle}<span class="parentheses">)</span> / ${representativeName}</div>
+                        <div class="p">التوقيع: <span class="dotted-line"></span></div>
+                        <div class="p">التاريخ: <span class="dotted-line"></span></div>
+                    </div>
+                </div>
+
+                <div style="margin: 25px 0; border-top: 1px solid #ddd; position: relative;">
+                    <div style="position: absolute; top: -10px; right: 50%; transform: translateX(50%); background: white; padding: 0 15px; color: #666; font-size: 18px;">✧</div>
+                </div>
+                <div class="p" style="text-align:center;color:#666;font-size:14px;">________________________________________</div>
+            `;
+
+            // Update preview
+            document.getElementById('contractPreview').innerHTML = contractHTML;
+            showAlert('تم تحديث معاينة العقد بنجاح', 'success');
+        }
+
+        function downloadPDF() {
+            // Validate required fields
+            const requiredFields = [
+                'companyName', 'commercialNo', 'issuedFrom', 
+                'companyAddress', 'companyPhone', 'companyEmail',
+                'representativeName', 'representativeTitle', 'restaurantName'
+            ];
+
+            const missingFields = [];
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    missingFields.push(field.previousElementSibling.textContent);
+                }
+            });
+
+            if (missingFields.length > 0) {
+                showAlert(`يرجى ملء الحقول التالية: ${missingFields.join('، ')}`, 'error');
+                return;
+            }
+
+            // Show loading
+            document.getElementById('loading').style.display = 'block';
+
+            // Get the contract element
+            const element = document.getElementById('contractPreview');
+            
+            // PDF options
+            const opt = {
+                margin: [15, 15, 15, 15],
+                filename: `عقد_التموين_الذكي_${document.getElementById('companyName').value}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    logging: false
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait',
+                    compress: true
+                }
+            };
+
+            // Generate PDF
+            html2pdf().set(opt).from(element).save().then(() => {
+                document.getElementById('loading').style.display = 'none';
+                showAlert('تم تنزيل ملف PDF بنجاح!', 'success');
+                
+                // Reset form after successful download
+                document.getElementById('companyName').value = '';
+                document.getElementById('commercialNo').value = '';
+                document.getElementById('issuedFrom').value = '';
+                document.getElementById('companyAddress').value = '';
+                document.getElementById('companyPhone').value = '';
+                document.getElementById('companyEmail').value = '';
+                document.getElementById('representativeName').value = '';
+                document.getElementById('representativeTitle').value = '';
+                document.getElementById('restaurantName').value = '';
+                
+                // Update preview
+                updatePreview();
+            }).catch(error => {
+                document.getElementById('loading').style.display = 'none';
+                showAlert('حدث خطأ أثناء إنشاء PDF: ' + error.message, 'error');
+            });
+        }
+
+        // Auto-update preview on input changes
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('input', updatePreview);
+        });
+    </script>
+</body>
+</html>
