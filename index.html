@@ -22,15 +22,15 @@
       color: var(--text);
       direction: rtl;
       font-family: "Simplified Arabic", "Arial", "Noto Naskh Arabic", "Amiri", sans-serif;
-      font-size: 15.5px;
-      line-height: 1.8;
+      font-size: 15px;
+      line-height: 1.7;
       text-align: justify;
     }
 
     .page {
-      max-width: 1000px;
-      margin: 25px auto;
-      padding: 30px;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 40px;
       background: #fff;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
       border-radius: 4px;
@@ -39,63 +39,50 @@
     .contract-ref {
       text-align: center;
       font-family: monospace;
-      font-size: 16px;
+      font-size: 14px;
       color: #666;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       letter-spacing: 2px;
       font-weight: bold;
     }
 
     h1 {
-      margin: 0 0 20px 0;
+      margin: 0 0 15px 0;
       text-align: center;
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 700;
       color: #1a237e;
-      padding-bottom: 12px;
+      padding-bottom: 10px;
       border-bottom: 2px solid var(--accent);
     }
 
     .p { 
-      margin: 12px 0; 
+      margin: 8px 0; 
       text-align: justify;
-      line-height: 1.85;
     }
     
     .section-title {
       font-weight: 700;
-      margin-top: 22px;
-      margin-bottom: 10px;
-      font-size: 16.5px;
+      margin-top: 15px;
+      margin-bottom: 8px;
+      font-size: 15px;
       color: #1a237e;
       padding-right: 8px;
       border-right: 3px solid var(--accent);
       background: linear-gradient(to left, rgba(0, 102, 204, 0.05), transparent);
-      padding: 8px 12px;
+      padding: 6px 10px;
       border-radius: 3px;
     }
 
     .dotted-line {
       display: inline-block;
-      min-width: 220px;
-      border-bottom: 1.5px dotted #666;
-      margin: 0 6px;
+      min-width: 150px;
+      border-bottom: 1px dotted #666;
+      margin: 0 4px;
       vertical-align: bottom;
       height: 1.2em;
-    }
-
-    .policy-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.2s;
-      border-bottom: 1px dotted var(--accent);
-      padding-bottom: 1px;
-    }
-    
-    .policy-link:hover {
-      color: #004499;
-      border-bottom: 1px solid #004499;
+      font-weight: bold;
+      color: #000;
     }
 
     .parentheses {
@@ -108,100 +95,22 @@
       width: 100%;
       border-collapse: collapse;
       table-layout: auto;
-      margin: 16px 0 22px 0;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      margin: 12px 0;
     }
     
     th, td {
       border: 1px solid var(--border);
-      padding: 12px 14px;
+      padding: 10px;
       vertical-align: top;
       text-align: right;
-      white-space: normal;
-      overflow: visible;
-      word-break: normal;
-      overflow-wrap: anywhere;
-      line-height: 1.75;
+      font-size: 14px;
     }
     
     th {
       text-align: center;
       font-weight: 700;
-      background: linear-gradient(to bottom, #f0f4ff, #e6ebff);
+      background: #f0f4ff;
       color: #1a237e;
-      font-size: 15px;
-      padding: 14px;
-    }
-    
-    td {
-      background-color: #fff;
-    }
-    
-    tr:nth-child(even) td {
-      background-color: #fafafa;
-    }
-
-    .hr {
-      margin: 25px 0;
-      border: 0;
-      border-top: 1px solid #ddd;
-      position: relative;
-    }
-    
-    .hr:before {
-      content: "✧";
-      position: absolute;
-      top: -10px;
-      right: 50%;
-      transform: translateX(50%);
-      background: white;
-      padding: 0 15px;
-      color: #666;
-      font-size: 18px;
-    }
-
-    .tbl-parties col.col-side { width: 16%; }
-    .tbl-parties col.col-data { width: 84%; }
-
-    .sub-item {
-      margin-right: 28px;
-      margin-bottom: 6px;
-      position: relative;
-      line-height: 1.8;
-    }
-    
-    .sub-item:before {
-      content: "•";
-      position: absolute;
-      right: -18px;
-      color: var(--accent);
-      font-size: 18px;
-    }
-
-    .signature-section {
-      margin-top: 35px;
-      padding-top: 25px;
-      border-top: 2px dashed #ccc;
-    }
-    
-    .signature-box {
-      display: inline-block;
-      width: 45%;
-      vertical-align: top;
-      padding: 15px;
-      background: var(--light-gray);
-      border-radius: 6px;
-      margin: 10px;
-      min-height: 180px;
-    }
-    
-    .signature-title {
-      font-weight: 700;
-      font-size: 16px;
-      color: #1a237e;
-      margin-bottom: 12px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid #ddd;
     }
 
     .number-list {
@@ -212,7 +121,7 @@
     .number-list .p {
       counter-increment: item;
       position: relative;
-      padding-right: 28px;
+      padding-right: 25px;
     }
     
     .number-list .p:before {
@@ -223,167 +132,137 @@
       color: var(--accent);
     }
 
-    @page {
-      size: A4;
-      margin: 15mm;
+    .sub-item {
+      margin-right: 25px;
+      margin-bottom: 4px;
+      position: relative;
+    }
+    
+    .sub-item:before {
+      content: "•";
+      position: absolute;
+      right: -15px;
+      color: var(--accent);
     }
 
-    @media print {
-      html, body {
-        margin: 0 !important;
-        padding: 0 !important;
-        direction: rtl;
-        background: white !important;
-      }
-
-      body {
-        font-size: 14px !important;
-        line-height: 1.75 !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-      }
-
-      .page {
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-shadow: none !important;
-        border-radius: 0 !important;
-      }
-
-      .contract-ref {
-        font-size: 14px !important;
-        color: #000 !important;
-      }
-
-      h1 {
-        font-size: 20px !important;
-        margin-bottom: 18px !important;
-      }
-      
-      .section-title {
-        font-size: 15.5px !important;
-        margin-top: 20px !important;
-        break-inside: avoid;
-      }
-
-      table {
-        width: 100% !important;
-        table-layout: auto !important;
-        page-break-inside: avoid !important;
-        box-shadow: none !important;
-      }
-
-      thead {
-        display: table-header-group !important;
-      }
-
-      tr, td, th {
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-      }
-
-      th, td {
-        padding: 10px 10px !important;
-        font-size: 13px !important;
-        overflow: visible !important;
-      }
-      
-      th {
-        background: #f0f4ff !important;
-      }
-
-      .section-title, .p {
-        page-break-inside: avoid !important;
-      }
-
-      .dotted-line {
-        min-width: 180px !important;
-        border-bottom: 1px dotted #000 !important;
-      }
-      
-      .policy-link {
-        color: #000 !important;
-        text-decoration: none !important;
-        border-bottom: 1px dotted #000 !important;
-      }
-      
-      .parentheses {
-        color: #333 !important;
-      }
-      
-      .hr {
-        border-top: 1px solid #000 !important;
-      }
-      
-      .signature-box {
-        background: #f8f9fa !important;
-        border: 1px solid #ddd !important;
-      }
-      
-      .hr:before, .sub-item:before {
-        display: none !important;
-      }
+    .signature-section {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 2px dashed #ccc;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .signature-box {
+      width: 48%;
+      padding: 12px;
+      background: var(--light-gray);
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+    
+    .signature-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: #1a237e;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
     }
 
-    /* Sidebar and Layout for Tool */
-    #tool-container {
-        display: flex;
-        max-width: 1400px;
-        margin: 0 auto;
-        min-height: 100vh;
-    }
-
+    /* Tool Layout */
+    #tool-container { display: flex; min-height: 100vh; }
     #sidebar {
-        width: 350px;
-        background: #fff;
-        padding: 20px;
-        border-left: 1px solid #ddd;
-        position: fixed;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        overflow-y: auto;
-        z-index: 100;
-        box-shadow: -2px 0 10px rgba(0,0,0,0.05);
+      width: 350px;
+      background: #fff;
+      padding: 20px;
+      border-left: 1px solid #ddd;
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      overflow-y: auto;
+      z-index: 100;
     }
-
-    #main-content {
-        margin-right: 350px;
-        flex: 1;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
-        background: #f5f5f5;
-    }
-
+    #main-content { margin-right: 350px; flex: 1; padding: 20px; display: flex; justify-content: center; background: #f5f5f5; }
     .form-group { margin-bottom: 15px; }
     .form-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 14px; }
-    .form-group input, .form-group select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-family: inherit;
+    .form-group input, .form-group select { 
+      width: 100%; 
+      padding: 10px; 
+      border: 1px solid #ddd; 
+      border-radius: 4px; 
+      font-family: inherit; 
+      box-sizing: border-box;
+    }
+    
+    /* تحسين طفيف لحقول التاريخ فقط */
+    .form-group input[type="date"] {
+      font-family: inherit;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      color: #333;
+    }
+    
+    .form-group input[type="date"]:focus {
+      border-color: #1a237e;
+      background: #fff;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(26, 35, 126, 0.1);
+    }
+    
+    /* تحسين لعرض اليوم العربي */
+    .day-display {
+      background: #f0f4ff;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #d1d9ff;
+      color: #1a237e;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 5px;
+      min-height: 20px;
+    }
+    
+    .date-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .date-row .form-group {
+      flex: 1;
+      margin-bottom: 0;
+    }
+    
+    .btn-print { 
+      background: #1a237e; 
+      color: white; 
+      border: none; 
+      padding: 12px; 
+      width: 100%; 
+      border-radius: 4px; 
+      cursor: pointer; 
+      font-weight: bold; 
+      margin-top: 10px; 
+      transition: background 0.3s;
+    }
+    
+    .btn-print:hover {
+      background: #0d1b6b;
     }
 
-    .btn-print {
-        background: #1a237e;
-        color: white;
-        border: none;
-        padding: 12px;
-        width: 100%;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: bold;
-        margin-top: 10px;
+    @page {
+      size: A4;
+      margin: 10mm;
     }
 
     @media print {
-        #sidebar { display: none !important; }
-        #main-content { margin-right: 0 !important; padding: 0 !important; background: white !important; }
-        #tool-container { display: block !important; }
-        .page { margin: 0 !important; box-shadow: none !important; }
+      #sidebar { display: none !important; }
+      #main-content { margin-right: 0 !important; padding: 0 !important; background: white !important; }
+      .page { margin: 0 !important; box-shadow: none !important; width: 100% !important; max-width: none !important; padding: 0 !important; }
+      body { font-size: 13px !important; line-height: 1.6 !important; }
+      .section-title { margin-top: 10px !important; font-size: 14px !important; }
     }
   </style>
 </head>
@@ -394,16 +273,47 @@
         <h2 style="color:#1a237e; margin-top:0;">بيانات العقد</h2>
         <form id="contractForm" oninput="updatePreview()">
             <div class="form-group">
-                <label>اسم الشركة / المؤسسة</label>
-                <input type="text" id="companyName" placeholder="اسم الشركة">
+                <label>رقم العقد (Contract Ref)</label>
+                <input type="number" id="contractNumber" placeholder="1" min="1" value="1" oninput="updatePreview()">
+            </div>
+            
+            <!-- تاريخ العقد -->
+            <div class="date-row">
+              <div class="form-group">
+                <label>تاريخ العقد (ميلادي)</label>
+                <input type="date" id="contractDate" onchange="updateDayFromDate()">
+              </div>
+            </div>
+            
+            <div class="form-group">
+                <label>يوم العقد (يتم تعبئته تلقائياً)</label>
+                <div id="dayDisplay" class="day-display">........</div>
+                <input type="hidden" id="contractDay">
+            </div>
+            
+            <div class="form-group">
+                <label>تاريخ بداية العقد (ميلادي)</label>
+                <input type="date" id="contractStartDate">
+            </div>
+            
+            <div class="form-group">
+                <label>نوع الكيان</label>
+                <select id="entityType" onchange="updatePreview()">
+                    <option value="شركة">شركة</option>
+                    <option value="مؤسسة">مؤسسة</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>اسم الكيان</label>
+                <input type="text" id="entityName" placeholder="اسم الشركة أو المؤسسة">
             </div>
             <div class="form-group">
                 <label>رقم السجل التجاري</label>
                 <input type="text" id="crNumber" placeholder="1010xxxxxx">
             </div>
             <div class="form-group">
-                <label>تاريخ السجل</label>
-                <input type="text" id="crDate" placeholder="1443/07/06">
+                <label>تاريخ السجل (ميلادي)</label>
+                <input type="date" id="crDate">
             </div>
             <div class="form-group">
                 <label>مصدر السجل</label>
@@ -419,7 +329,7 @@
             </div>
             <div class="form-group">
                 <label>البريد الإلكتروني</label>
-                <input type="text" id="email" placeholder="email@example.com">
+                <input type="email" id="email" placeholder="email@example.com">
             </div>
             <div class="form-group">
                 <label>اسم الممثل</label>
@@ -443,20 +353,16 @@
 
     <div id="main-content">
       <div class="page">
-        <div class="contract-ref">CONTRACT REF: 0$$01</div>
+        <div class="contract-ref" id="contractRefDisplay">CONTRACT REF: 0$$01</div>
         
         <h1>عقد تقديم خدمات الربط التقني</h1>
 
-        <div class="p">أنه في يوم <span class="dotted-line"></span> بتاريخ <span class="dotted-line"></span> حرر هذا العقد بين كل من:</div>
+        <div class="p">أنه في يوم <span id="p_contractDay" class="dotted-line">................</span> بتاريخ <span id="p_contractDate" class="dotted-line">................</span> حرر هذا العقد بين كل من:</div>
 
-        <table class="tbl-parties">
-          <colgroup>
-            <col class="col-side" />
-            <col class="col-data" />
-          </colgroup>
+        <table>
           <thead>
             <tr>
-              <th>الطرف</th>
+              <th style="width:16%">الطرف</th>
               <th>البيانات</th>
             </tr>
           </thead>
@@ -464,20 +370,20 @@
             <tr>
               <td style="text-align:center;font-weight:700;background:#f0f8ff;">أولاً</td>
               <td>
-                أولاً <span class="parentheses">-</span> مؤسسة التموين الذكي لتقنية المعلومات، السجل التجاري رقم <span class="parentheses">(</span>1010804712<span class="parentheses">)</span> وتاريخه 06 / 07 / 1443 هـ صادر من <span class="parentheses">(</span>الرياض<span class="parentheses">)</span>، وعنوانها 3765 محمد العثماني، حي المغرزات، الرياض 12482 هاتف: 920007560، البريد الإلكتروني: info@smartsupply.sa، ويمثلها في التوقيع على هذا العقد السيد / رياض بن بليهد بن محمد العتيبي، بصفته <span class="parentheses">(</span>المدير العام<span class="parentheses">)</span> ويشار إليه فيما بعد بـ <span class="parentheses">(</span>الطرف الأول<span class="parentheses">)</span>.
+                أولاً <span class="parentheses">-</span> مؤسسة التموين الذكي لتقنية المعلومات، السجل التجاري رقم <span class="parentheses">(</span>1010804712<span class="parentheses">)</span> وتاريخه 06 / 07 / 1443 هـ صادر من <span class="parentheses">(</span>الرياض<span class="parentheses">)</span>، وعنوانها 3765 محمد العثماني، حي المغرزات، الرياض 12482 هاتف: 920007560، البريد الإلكتروني: info@tojjarplus.com، ويمثلها في التوقيع على هذا العقد السيد / رياض بن بليهد بن محمد العتيبي، بصفته <span class="parentheses">(</span>المدير العام<span class="parentheses">)</span> ويشار إليه فيما بعد بـ <span class="parentheses">(</span>الطرف الأول<span class="parentheses">)</span>.
               </td>
             </tr>
             <tr>
               <td style="text-align:center;font-weight:700;background:#f0f8ff;">ثانياً</td>
               <td>
-                ثانياً <span class="parentheses">-</span> <span id="p_companyName" class="dotted-line"></span> / السجل التجاري رقم <span id="p_crNumber" class="dotted-line"></span> وتاريخه <span id="p_crDate" class="dotted-line"></span> صادر من <span id="p_crSource" class="dotted-line"></span>، وعنوانها <span id="p_address" class="dotted-line"></span> هاتف: <span id="p_phone" class="dotted-line"></span>، البريد الإلكتروني: <span id="p_email" class="dotted-line"></span>، ويمثلها في التوقيع على هذا العقد السيد / <span id="p_repName" class="dotted-line"></span>، بصفته <span id="p_repRole" class="dotted-line"></span> ويشار إليه فيما بعد بـ <span class="parentheses">(</span>الطرف الثاني<span class="parentheses">)</span>.
+                ثانياً <span class="parentheses">-</span> <span id="p_entityType">شركة</span> / <span id="p_entityName" class="dotted-line">.......................</span> السجل التجاري رقم <span id="p_crNumber" class="dotted-line">.......................</span> وتاريخه <span id="p_crDate" class="dotted-line">.......................</span> صادر من <span id="p_crSource" class="dotted-line">.......................</span>، وعنوانها <span id="p_address" class="dotted-line">.......................</span> هاتف: <span id="p_phone" class="dotted-line">.......................</span>، البريد الإلكتروني: <span id="p_email" class="dotted-line">.......................</span>، ويمثلها في التوقيع على هذا العقد السيد / <span id="p_repName" class="dotted-line">.......................</span>، بصفته <span id="p_repRole" class="dotted-line">.......................</span> ويشار إليه فيما بعد بـ <span class="parentheses">(</span>الطرف الثاني<span class="parentheses">)</span>.
               </td>
             </tr>
           </tbody>
         </table>
 
         <div class="section-title">التمهيد:</div>
-        <div class="p">حيث إن الطرف الأول شركة تملك الخبرات في تقديم الحلول التقنية المتقدمة، وتعمل كواجهة لتمكين المطاعم من استقبال الطلبات عبر تطبيق الواتساب، وذلك من خلال ربط وتوثيق حسابات الأعمال من الشركة الأم المالكة للتطبيق <span class="parentheses">(</span>شركة ميتا<span class="parentheses">)</span>، لتمكين الطرف الثاني من الاستفادة من الخدمات والمزايا التقنية جراء هذا التوثيق، وحيث أن الطرف الثاني يعمل في مجال المطاعم ويملك المطعم <span class="parentheses">(</span><span id="p_restaurantName" class="dotted-line"></span><span class="parentheses">)</span> ويرغب في تطوير منظومة استقبال طلباته وتحويلها من النظام التقليدي إلى نظام آلي عبر تطبيق الواتساب، والاستفادة من الخدمات التقنية والوساطة التي يوفرها الطرف الأول لتسهيل وصول عملائه لمنتجاته وتحصيل قيمتها إلكترونياً، ولرغبة الطرف الثاني بالتعاقد مع الطرف الأول، فقد اتفق الطرفان عن قناعة، ورضا، وإدراك مستوعب لما حرر من غير إكراه على النحو الآتي:</div>
+        <div class="p">حيث إن الطرف الأول شركة تملك الخبرات في تقديم الحلول التقنية المتقدمة، وتعمل كواجهة لتمكين المطاعم من استقبال الطلبات عبر تطبيق الواتساب، وذلك من خلال ربط وتوثيق حسابات الأعمال من الشركة الأم المالكة للتطبيق <span class="parentheses">(</span>شركة ميتا<span class="parentheses">)</span>، لتمكين الطرف الثاني من الاستفادة من الخدمات والمزايا التقنية جراء هذا التوثيق، وحيث أن الطرف الثاني يعمل في مجال المطاعم ويملك المطعم <span class="parentheses">(</span><span id="p_restaurantName" class="dotted-line">.......................</span><span class="parentheses">)</span> ويرغب في تطوير منظومة استقبال طلباته وتحويلها من النظام التقليدي إلى نظام آلي عبر تطبيق الواتساب، والاستفادة من الخدمات التقنية والوساطة التي يوفرها الطرف الأول لتسهيل وصول عملائه لمنتجاته وتحصيل قيمتها إلكترونياً، ولرغبة الطرف الثاني بالتعاقد مع الطرف الأول، فقد اتفق الطرفان عن قناعة، ورضا، وإدراك مستوعب لما حرر من غير إكراه على النحو الآتي:</div>
 
         <div class="section-title">البند الأول:</div>
         <div class="p">يعتبر التمهيد أعلاه جزء لا يتجزأ من هذا العقد يقرأ، ويفسر معه.</div>
@@ -493,16 +399,12 @@
         <div class="number-list">
           <div class="p">يقر الطرف الثاني بأنه حاصل على التراخيص اللازمة لمزاولة نشاطه، والتعهد بالامتثال لجميع الأنظمة والقوانين المعمول بها بالمملكة، ويكون مسؤولاً أمام الجهات الحكومية والقضائية في حال ظهور خلاف ذلك.</div>
           <div class="p">يقر ويعي الطرف الثاني أن الطرف الأول مجرد وسيط وواجهة لربط وتوثيق رقم الواتساب الخاص بالطرف الثاني من الشركة الأم <span class="parentheses">(</span>شركة ميتا<span class="parentheses">)</span>، ولا يتحمل الطرف الأول أي مسؤولية بعد إجراءات التوثيق.</div>
-          <div class="p">يقر الطرف الثاني بعلمه أن خدمة الواتساب تعتمد على سياسات شركة <span class="parentheses">(</span>ميتا<span class="parentheses">)</span>، وأي تحديث أو إيقاف أو تغيير في <strong>رسوم الحملات التسويقية</strong> من قبل شركة <span class="parentheses">(</span>ميتا<span class="parentheses">)</span> فيكون أثره مباشرة على الطرف الثاني، ولا يتحمل الطرف الأول أي مسؤولية عن انقطاع الخدمة الناتج عن قرارات شركة <span class="parentheses">(</span>ميتا<span class="parentheses">)</span>.</div>
+          <div class="p">يقر الطرف الثاني بعلمه أن خدمة الواتساب تعتمد على سياسات شركة <span class="parentheses">(</span>ميتا<span class="parentheses">)</span>، وأي تحديث أو إيقاف أو تغيير في <strong>رسوم الحملات التسويقية</strong> من قبل شركة <span class="parentheses">(</span>ميتا<span class="parentheses">)</span> فيكون أثره مباشرة على الطرف الثاني.</div>
           <div class="sub-item">سياسة Meta لرسائل تسويقية واتساب <span class="parentheses">(</span>الرسوم والشروط<span class="parentheses">)</span>: 
-            <a href="https://www.whatsapp.com/legal/meta-terms-whatsapp-marketing-messages-features?lang=ar" target="_blank" class="policy-link">
-              https://www.whatsapp.com/legal/meta-terms-whatsapp-marketing-messages-features?lang=ar
-            </a>
+            https://www.whatsapp.com/legal/meta-terms-whatsapp-marketing-messages-features?lang=ar
           </div>
           <div class="sub-item">صفحة الأسعار ورسوم WhatsApp Business Platform من Meta <span class="parentheses">(</span>رسمي<span class="parentheses">)</span>: 
-            <a href="https://developers.facebook.com/docs/whatsapp/pricing/" target="_blank" class="policy-link">
-              https://developers.facebook.com/docs/whatsapp/pricing/
-            </a>
+            https://developers.facebook.com/docs/whatsapp/pricing/
           </div>
           <div class="p">يقر الطرف الثاني بعلمه واطلاعه على الخصائص الفنية والقيود البرمجية المفروضة من شركة <span class="parentheses">(</span>ميتا<span class="parentheses">)</span> على واجهة الواتساب المؤسسي.</div>
           <div class="p">يلتزم الطرف الثاني بسداد أي رسوم تفرضها شركة <span class="parentheses">(</span>ميتا<span class="parentheses">)</span>، وتعتبر هذه الرسوم مستقلة عن الحقوق المالية المستحقة للطرف الأول.</div>
@@ -512,12 +414,15 @@
         <div class="p">يتم تحصيل مبالغ المبيعات الإلكترونية عبر حساب تجميعي ويتم تحويل المبالغ المحصلة إلى الحساب البنكي الخاص بالطرف الثاني خلال مدة <span class="parentheses">(</span>يومين عمل<span class="parentheses">)</span> من تاريخ التحصيل.</div>
 
         <div class="section-title">البند الخامس <span class="parentheses">(</span>مدة العقد<span class="parentheses">)</span></div>
-        <div class="p">مدة هذا العقد <span class="parentheses">(</span><span id="p_duration" class="dotted-line"></span><span class="parentheses">)</span>، وتبدأ هذه المدة بعد <span class="parentheses">(</span>توقيع هذا العقد / توثيق الحساب<span class="parentheses">)</span>، وتنتهي بانتهاء مدته.</div>
+        <div class="p">مدة هذا العقد</div>
+        <div class="p" style="text-align:center;"><span id="p_duration" class="dotted-line" style="min-width:200px;">.......................</span></div>
+        <div class="p">وتبدا بتاريخ <span id="p_contractStartDate" class="dotted-line" style="min-width:200px;">.......................</span></div>
+        <div class="p">وتنتهي بانتهاء مدته</div>
 
         <div class="section-title">البند السادس <span class="parentheses">(</span>المقابل المالي وآلية الدفع<span class="parentheses">)</span></div>
         <div class="number-list">
           <div class="p"><strong>رسوم المنصة:</strong> ريال ونصف <span class="parentheses">(</span>1.5 ريال<span class="parentheses">)</span> من إجمالي كل طلب مكتمل يتم عبر الواتساب (6 أشهر مجانا).</div>
-          <div class="p"><strong>رسوم التوصيل:</strong> ستة عشر ريالاً <span class="parentheses">(</span>16 ريال<span class="parentheses">)</span> للطلبات الواقعة ضمن نطاق المسافة من 5 كيلومترات إلى 7 كيلومترات.</div>
+          <div class="p"><strong>رسوم التوصيل:</strong> ستة عشر ريالاً <span class="parentheses">(</span>16 ريال<span class="parentheses)</span> للطلبات الواقعة ضمن نطاق المسافة من 5 كيلومترات إلى 7 كيلومترات.</div>
           <div class="p"><strong>آلية الفواتير:</strong> يتم إصدار الفواتير المالية أسبوعياً كل 7 أيام، وتشمل جميع المستحقات المتراكمة خلال الفترة.</div>
           <div class="p"><strong>آلية الخصم:</strong> يتم خصم المبالغ المستحقة للطرف الأول تلقائياً من إجمالي المبالغ المحصلة قبل تحويل الباقي للطرف الثاني.</div>
           <div class="p">تسدد المدفوعات عن طريق التحويل البنكي المباشر، أو عبر أي وسيلة دفع إلكتروني أخرى يتم الاتفاق عليها بين الطرفين.</div>
@@ -532,68 +437,60 @@
         <div class="sub-item">أنظمة الدفع عبر الهاتف <span class="parentheses">(</span>Apple Pay<span class="parentheses">)</span></div>
         <div class="number-list">
           <div class="p">يتحمل الطرف الأول مسؤولية الأمان والخصوصية لمعالجة البيانات المالية.</div>
-          <div class="p"><strong>تعديلات الخدمة:</strong> في حال إجراء أي تعديلات على متطلبات خدماتها، يقوم الطرف الأول بإبلاغ التاجر بتلك التعديلات في الوقت المناسب وفقًا للبند 12 من هذا العقد "الإخطارات"، شريطة ألا تؤدي هذه التعديلات إلى إيقاف الخدمة إلا في الضرورة القصوى.</div>
-          <div class="p"><strong>ضمان التوافر:</strong> يلتزم الطرف الأول بضمان توافر الخدمة بنسبة 99% للطرف الثاني، باستثناء حالات القوة القاهرة كما هو منصوص عليه في البند 13 من هذا العقد، أو في حالة انقطاع خدمات الإنترنت على المستوى المحلي لأسباب خارجة عن إرادة الطرف الأول.</div>
+          <div class="p"><strong>تعديلات الخدمة:</strong> في حال إجراء أي تعديلات على متطلبات خدماتها، يقوم الطرف الأول بإبلاغ التاجر بتلك التعديلات في الوقت المناسب وفقًا للبند 12 من هذا العقد "الإخطارات".</div>
+          <div class="p"><strong>ضمان التوافر:</strong> يلتزم الطرف الأول بضمان توافر الخدمة بنسبة 99% للطرف الثاني.</div>
           <div class="p"><strong>الدعم الفني:</strong> يلتزم الطرف الأول بتقديم خدمات الدعم الفني للتاجر في حالة حدوث أي مشكلات أو أعطال ناتجة عن النظام أو الخدمة التي تقدمها.</div>
-          <div class="p">يقوم الطرف الأول بإصدار فاتورة مزود الخدمة (طرف ثالث) نيابةً عنه إلى الطرف الثاني وفقاً لما اتفق عليه الطرفان، على أن تشمل الفاتورة رسوم مزود الخدمة وجميع الضرائب المطبقة بما في ذلك ضريبة القيمة المضافة على الخدمة المقدمة، والتي يتحمل الطرف الثاني مسؤولية دفعها بالكامل، وسيتم خصم المبالغ بشكل تلقائي من الحساب.</div>
+          <div class="p">يقوم الطرف الأول بإصدار فاتورة مزود الخدمة (طرف ثالث) نيابةً عنه إلى الطرف الثاني وفقاً لما اتفق عليه الطرفان.</div>
           <div class="p"><strong>تخفيف المسؤولية:</strong> يخلي الطرف الأول مسؤوليته عن أي خسائر قد يتكبدها التاجر نتيجة التأخيرات التي لا ترجع سببها إلى خطأ من الطرف الأول.</div>
         </div>
 
         <div class="section-title">البند الثامن <span class="parentheses">(</span>فسخ العقد<span class="parentheses">)</span></div>
         <div class="number-list">
-          <div class="p">يحق لأي من الطرفين فسخ العقد فوراً بإشعار كتابي في حال وقوع إخلال جوهري من الطرف الآخر بأحكام هذا العقد أو وثائقه، ويلتزم الطرف المخل بتعويض الطرف الآخر عما أصابه من ضرر بسبب هذا الإخلال.</div>
-          <div class="p">في حال عدم التزام أي من الطرفين بالتزاماته الواردة في هذا العقد.</div>
+          <div class="p">يحق لأي من الطرفين فسخ العقد فوراً بإشعار كتابي في حال وقوع إخلال جوهري من الطرف الآخر بأحكام هذا العقد.</div>
           <div class="p">في حال تعثر الطرف الثاني عن سداد الرسوم المستحقة لمدة تتجاوز <span class="parentheses">(</span>5<span class="parentheses">)</span> أيام حتى السداد، يحق للطرف الأول تعليق الخدمة مؤقتاً.</div>
         </div>
 
         <div class="section-title">البند التاسع <span class="parentheses">(</span>أسبقية العقد<span class="parentheses">)</span></div>
-        <div class="p">تمثل مواد هذا العقد جميع ما تم الاتفاق عليه بين الطرفين، وتلغي، وتنسخ، وتحل محل أي محادثات، أو مفاوضات، أو مفاهمات، أو اتفاقيات سابقة عدا الوثائق المشار إليها في البند الثاني، وتعد المرفقات والملاحق الموقعة من طرفي العقد بعد إبرامه متممة، ومكملة، ومفسرة لمواده.</div>
+        <div class="p">تمثل مواد هذا العقد جميع ما تم الاتفاق عليه بين الطرفين، وتلغي، وتنسخ، وتحل محل أي محادثات، أو مفاوضات، أو مفاهمات سابقة.</div>
 
         <div class="section-title">البند العاشر <span class="parentheses">(</span>لغة العقد<span class="parentheses">)</span></div>
-        <div class="p">اللغة العربية هي اللغة المعتمدة في المراسلات الرسمية وفي تفسير العقد، ومع ذلك يجوز للطرفين استعمال إحدى اللغات الأجنبية في كتابة العقد أو جزء منه إلى جانب اللغة العربية وإذا وجد تعارض بينهما أو اختلاف يعتد بالنص العربي.</div>
+        <div class="p">اللغة العربية هي اللغة المعتمدة في المراسلات الرسمية وفي تفسير العقد.</div>
 
         <div class="section-title">البند الحادي عشر <span class="parentheses">(</span>الظروف القاهرة غير المتوقعة<span class="parentheses">)</span></div>
-        <div class="p">يعفى جميع الأطراف من أي تأخير أو فشل في أداء ما هو مطلوب بموجب هذا العقد إذا كان سبب ذلك حدوث أي طارئ خارج إمكانية السيطرة المعقولة بما في ذلك على سبيل المثال لا الحصر: الحرب، حدوث نار، الاحتجاز، أعمال الشغب، الزلازل، الفيضانات، الانفجارات، أو غيرها من الحوادث الطبيعية، القرارات التنظيمية الصادرة من الجهات المختصة، سيتم تمديد مدة الالتزامات الخاصة بالطرف المعذور بشكل يومي لفترة زمنية مساوية لفترة الظرف القاهر، وبعد زوال هذه الظروف القاهرة، تستأنف التزامات الأطراف بموجب هذا العقد.</div>
+        <div class="p">يعفى جميع الأطراف من أي تأخير أو فشل في أداء ما هو مطلوب بموجب هذا العقد إذا كان سبب ذلك حدوث أي طارئ خارج إمكانية السيطرة المعقولة.</div>
 
         <div class="section-title">البند الثاني عشر <span class="parentheses">(</span>الإشعارات<span class="parentheses">)</span></div>
-        <div class="p">يتم تبادل الإشعارات والإخطارات المتعلقة بهذا العقد عن طريق ممثل التواصل لكل طرف إما بتسليمها باليد مقابل إيصال يثبت الاستلام، أو بالبريد المسجل، أو البريد الممتاز، أو البريد الإلكتروني، أو الواتساب، الخاصة بممثل التواصل، أو العناوين المثبتة بصدر هذا العقد، وتعد منتجة لآثارها القانونية متى ما بلغت بالطريقة المذكورة إلى عناوين الطرفين المذكورة بمقدمة هذا العقد، ويلتزم كل طرف بإخطار الطرف الآخر بأي تعديل أو تغيير يطرأ على عنوانه الوارد بصدر هذا العقد.</div>
+        <div class="p">يتم تبادل الإشعارات والإخطارات المتعلقة بهذا العقد عن طريق ممثل التواصل لكل طرف إما بتسليمها باليد، أو بالبريد الإلكتروني، أو الواتساب.</div>
 
         <div class="section-title">البند الثالث عشر <span class="parentheses">(</span>المعلومات السرية<span class="parentheses">)</span></div>
-        <div class="p">يراد بالمعلومات السرية في هذا البند: <span class="parentheses">(</span>جميع البيانات والمعلومات بجميع أشكالها<span class="parentheses">)</span>، ويلتزم الطرفان على عدم استخدام المعلومات السرية، وعدم كشفها لطرف آخر، إلا عند طلب جهات حكومية، وبطلب رسمي، أو باتفاق مكتوب بين الطرفين، ولا يعد من المعلومات السرية ما يلي:</div>
-        <div class="number-list">
-          <div class="p">المعلومات المعلنة، والمتاحة للجمهور.</div>
-          <div class="p">ما كان معروفاً، أو أصبح معروفاً بشكل عام من قبل الطرف الثاني قبل وقت الإفصاح.</div>
-        </div>
+        <div class="p">يراد بالمعلومات السرية في هذا البند: <span class="parentheses">(</span>جميع البيانات والمعلومات بجميع أشكالها<span class="parentheses">)</span>، ويلتزم الطرفان على عدم استخدام المعلومات السرية، وعدم كشفها لطرف آخر.</div>
 
         <div class="section-title">البند الرابع عشر <span class="parentheses">(</span>إجراءات التقاضي والخلافات<span class="parentheses">)</span></div>
-        <div class="p">يخضع هذا العقد للأنظمة المعمول بها في المملكة العربية السعودية، ويتم تفسيره، وتنفيذه فيما ينشأ عنه من دعاوى بموجبه، وفي حال حدوث أي خلاف ينشأ عن تنفيذ هذا العقد يتم حله بالطرق الودية بين الطرفين، وفي حال تعذر ذلك تكون المحكمة المختصة بمدينة الرياض.</div>
+        <div class="p">يخضع هذا العقد للأنظمة المعمول بها في المملكة العربية السعودية، وفي حال حدوث أي خلاف ينشأ عن تنفيذ هذا العقد يتم حله بالطرق الودية بين الطرفين، وفي حال تعذر ذلك تكون المحكمة المختصة بمدينة الرياض.</div>
 
         <div class="section-title">البند الخامس عشر <span class="parentheses">(</span>عدم الإعفاء من الحقوق<span class="parentheses">)</span></div>
-        <div class="p">عدم تطبيق أو انتهاك أي من الطرفين لأي من يبدو الحقوق الواردة في مواد هذه الاتفاقية أو تأخره في ذلك لا يعتبر في أي حال من الأحوال تنازل عن هذا الحق أو هذه الاتفاقية بشكل عام، ولا يؤثر هذا التأخر أو التطبيق في حق أي من الطرفين في إنفاذ أي من الأحكام أو المواد الواردة في هذه الاتفاقية.</div>
+        <div class="p">عدم تطبيق أو انتهاك أي من الطرفين لأي من الحقوق الواردة في مواد هذه الاتفاقية لا يعتبر في أي حال من الأحوال تنازل عن هذا الحق.</div>
 
         <div class="section-title">البند السادس عشر <span class="parentheses">(</span>البطلان الجزئي لبنود الاتفاقية<span class="parentheses">)</span></div>
-        <div class="p">إذا تم اعتبار أحد شروط أو أحكام هذه الاتفاقية مخالف للنظام، أو لا يمكن تطبيقه لأي سبب صادر من السلطات الإدارية أو حكم من محكمة مختصة أو هيئة حكومية أو سياسية عامة، تظل باقي الشروط والأحكام الأخرى سارية ولا يمتد إليها هذا البطلان، إلا إذا تعلق موضوع هذا البطلان بتلك الأحكام، أو الشروط المتصلة، أو المرتبطة، أو المتعلقة بأحد البنود والمواد الجوهرية لهذه الاتفاقية.</div>
+        <div class="p">إذا تم اعتبار أحد شروط أو أحكام هذه الاتفاقية مخالف للنظام، تظل باقي الشروط والأحكام الأخرى سارية ولا يمتد إليها هذا البطلان.</div>
 
         <div class="section-title">البند السابع عشر <span class="parentheses">(</span>المصادقة<span class="parentheses">)</span></div>
-        <div class="p">على ما تقدم، وقع الطرفان هذا العقد في مدينة الرياض بالمملكة العربية السعودية في التاريخ المذكور بصدر هذا العقد، وحرر من نسختين باللغة العربية تعتبر كل منهما أصلاً، وقد تسلم كل طرف نسخة منها للعمل بموجبها، ويصبح هذا العقد سارياً ونافذ المفعول في مواجهة الطرفين بعد التوقيع عليهما.</div>
+        <div class="p">على ما تقدم، وقع الطرفان هذا العقد في مدينة الرياض، وحرر من نسختين باللغة العربية تعتبر كل منهما أصلاً، ويصبح هذا العقد سارياً ونافذ المفعول بعد التوقيع.</div>
 
-        <div class="p" style="text-align:center;font-style:italic;margin-top:30px;">وعلى هذا اتفقا، وأذنا، وصلى الله وسلم على نبينا محمد وآله وصحبه أجمعين.</div>
+        <div class="p" style="text-align:center;font-style:italic;margin-top:20px;">وعلى هذا اتفقا، وأذنا، وصلى الله وسلم على نبينا محمد وآله وصحبه أجمعين.</div>
 
         <div class="signature-section">
           <div class="signature-box">
             <div class="signature-title">الطرف الأول</div>
             <div class="p">مؤسسة التموين الذكي لتقنية المعلومات</div>
-            <div class="p">ويمثلها بصفته <span class="parentheses">(</span>المدير العام<span class="parentheses">)</span> / رياض بن بليهد بن محمد العتيبي</div>
+            <div class="p">المدير العام / رياض بن بليهد بن محمد العتيبي</div>
             <div class="p">التوقيع: <span class="dotted-line"></span></div>
-            <div class="p">التاريخ: <span class="dotted-line"></span></div>
           </div>
-
           <div class="signature-box">
             <div class="signature-title">الطرف الثاني</div>
-            <div class="p">شركة <span id="p_sigCompanyName" class="dotted-line"></span></div>
-            <div class="p">ويمثلها بصفته <span class="parentheses">(</span><span id="p_sigRepRole" class="dotted-line"></span><span class="parentheses">)</span> / <span id="p_sigRepName" class="dotted-line"></span></div>
+            <div class="p"><span id="p_sigEntityType">شركة</span> / <span id="p_sigEntityName">.......................</span></div>
+            <div class="p"><span id="p_sigRepRole">....</span> / <span id="p_sigRepName">....</span></div>
             <div class="p">التوقيع: <span class="dotted-line"></span></div>
-            <div class="p">التاريخ: <span class="dotted-line"></span></div>
           </div>
         </div>
       </div>
@@ -601,29 +498,128 @@
   </div>
 
   <script>
-    function updatePreview() {
-        const fieldMapping = {
-            'companyName': ['p_companyName', 'p_sigCompanyName'],
-            'crNumber': ['p_crNumber'],
-            'crDate': ['p_crDate'],
-            'crSource': ['p_crSource'],
-            'address': ['p_address'],
-            'phone': ['p_phone'],
-            'email': ['p_email'],
-            'repName': ['p_repName', 'p_sigRepName'],
-            'repRole': ['p_repRole', 'p_sigRepRole'],
-            'restaurantName': ['p_restaurantName'],
-            'duration': ['p_duration']
-        };
-
-        for (const [inputId, previewIds] of Object.entries(fieldMapping)) {
-            const inputVal = document.getElementById(inputId).value;
-            previewIds.forEach(pId => {
-                const el = document.getElementById(pId);
-                if (el) el.innerText = inputVal || '.......................';
-            });
-        }
+    // دالة لتوليد اليوم العربي من التاريخ
+    function getArabicDayName(date) {
+      const days = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+      const dayIndex = date.getDay();
+      return days[dayIndex] || '........';
     }
+    
+    // دالة لتحويل التاريخ الميلادي إلى تنسيق عربي
+    function formatDateToArabic(date) {
+      if (!date) return '........';
+      
+      const day = date.getDate();
+      const month = date.getMonth() + 1; // الأشهر من 0 إلى 11
+      const year = date.getFullYear();
+      
+      // تنسيق التاريخ بالشكل العربي
+      return `${day} / ${month} / ${year} م`;
+    }
+    
+    // دالة لتحديث اليوم العربي من التاريخ
+    function updateDayFromDate() {
+      const dateInput = document.getElementById('contractDate');
+      const dayDisplay = document.getElementById('dayDisplay');
+      const dayHiddenInput = document.getElementById('contractDay');
+      
+      if (dateInput.value) {
+        const selectedDate = new Date(dateInput.value);
+        const arabicDay = getArabicDayName(selectedDate);
+        
+        // عرض اليوم في العرض المخصص
+        dayDisplay.textContent = arabicDay;
+        
+        // تخزين اليوم في الحقل المخفي ليتم استخدامه في العرض
+        dayHiddenInput.value = arabicDay;
+        
+        // تحديث المعاينة
+        updatePreview();
+      } else {
+        dayDisplay.textContent = '........';
+        dayHiddenInput.value = '';
+      }
+    }
+    
+    // دالة لتحديث المعاينة
+    function updatePreview() {
+        // تحديث رقم العقد
+        const contractNumber = document.getElementById('contractNumber').value;
+        const formattedNumber = contractNumber.toString().padStart(2, '0');
+        document.getElementById('contractRefDisplay').innerText = `CONTRACT REF: 0$$${formattedNumber}`;
+        
+        // تحديث تاريخ العقد
+        const contractDay = document.getElementById('contractDay').value;
+        const contractDateInput = document.getElementById('contractDate');
+        const contractStartDateInput = document.getElementById('contractStartDate');
+        
+        document.getElementById('p_contractDay').innerText = contractDay || '................';
+        
+        // تنسيق تاريخ العقد للعرض
+        if (contractDateInput.value) {
+          const date = new Date(contractDateInput.value);
+          document.getElementById('p_contractDate').innerText = formatDateToArabic(date);
+        } else {
+          document.getElementById('p_contractDate').innerText = '................';
+        }
+        
+        // تنسيق تاريخ بداية العقد للعرض
+        if (contractStartDateInput.value) {
+          const startDate = new Date(contractStartDateInput.value);
+          document.getElementById('p_contractStartDate').innerText = formatDateToArabic(startDate);
+        } else {
+          document.getElementById('p_contractStartDate').innerText = '.......................';
+        }
+        
+        // تحديث نوع الكيان والاسم
+        const entityType = document.getElementById('entityType').value;
+        const entityName = document.getElementById('entityName').value;
+        
+        document.getElementById('p_entityType').innerText = entityType;
+        document.getElementById('p_sigEntityType').innerText = entityType;
+        document.getElementById('p_entityName').innerText = entityName || '.......................';
+        document.getElementById('p_sigEntityName').innerText = entityName || '.......................';
+        
+        // تحديث الحقول الأخرى
+        const fields = [
+            'crNumber', 'crDate', 'crSource', 'address', 'phone', 'email', 
+            'repName', 'repRole', 'restaurantName', 'duration'
+        ];
+        
+        fields.forEach(id => {
+            const val = document.getElementById(id).value;
+            const previewEl = document.getElementById('p_' + id);
+            if (previewEl) {
+                // تنسيق خاصة لحقول التاريخ
+                if (id === 'crDate' && val) {
+                  const date = new Date(val);
+                  previewEl.innerText = formatDateToArabic(date);
+                } else {
+                  previewEl.innerText = val || '.......................';
+                }
+            }
+            
+            // تحديث التوقيع (للحقول المناسبة فقط)
+            if (['repName', 'repRole'].includes(id)) {
+                const sigId = 'p_sig' + id.charAt(0).toUpperCase() + id.slice(1);
+                const sigEl = document.getElementById(sigId);
+                if (sigEl) sigEl.innerText = val || '.......................';
+            }
+        });
+    }
+    
+    // تهيئة الصفحة عند التحميل
+    document.addEventListener('DOMContentLoaded', function() {
+        updatePreview();
+        
+        // تعيين التاريخ الحالي كقيمة افتراضية
+        const today = new Date();
+        const todayFormatted = today.toISOString().split('T')[0];
+        document.getElementById('contractDate').value = todayFormatted;
+        
+        // تحديث اليوم تلقائياً عند التحميل
+        updateDayFromDate();
+    });
   </script>
 </body>
 </html>
